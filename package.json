@@ -13,12 +13,15 @@
     "import-js": "^4.0.2"
   },
   "scripts": {
-    "lint": "eslint --max-warnings=0 ."
+    "lint": "eslint --max-warnings=0 .",
+    "build": "parcel build --dist-dir build ./source/index.html",
+    "serve": "parcel serve --dist-dir build ./source/index.html"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
     "eslint-config-optimum-energy": "^0.7.0",
-    "javascript-typescript-langserver": "^2.11.3"
+    "javascript-typescript-langserver": "^2.11.3",
+    "parcel": "^2.0.0-beta.1"
   }
 }
