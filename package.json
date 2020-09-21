@@ -17,6 +17,7 @@
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
-    "eslint-config-optimum-energy": "^0.7.0"
+    "eslint-config-optimum-energy": "^0.7.0",
+    "javascript-typescript-langserver": "^2.11.3"
   }
 }
