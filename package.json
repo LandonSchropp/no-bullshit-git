@@ -12,7 +12,6 @@
     "@babel/register": "^7.11.5",
     "@parcel/transformer-css": "^2.0.0-alpha.3",
     "@parcel/transformer-postcss": "^2.0.0-alpha.3",
-    "import-js": "^4.0.2",
     "parcel": "^2.0.0-beta.1",
     "sass": "^1.26.11"
   },
@@ -25,6 +24,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.9.0",
     "eslint-config-optimum-energy": "^0.7.0",
+    "import-js": "^4.0.2",
     "javascript-typescript-langserver": "^2.11.3"
   }
 }
