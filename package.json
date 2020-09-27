@@ -24,7 +24,7 @@
     "download-notion-data": "babel-node scripts/download-notion-data.js"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
+    "@babel/eslint-parser": "^7.11.5",
     "eslint": "^7.9.0",
     "eslint-config-optimum-energy": "^0.7.0",
     "import-js": "^4.0.2",

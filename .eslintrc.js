@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   extends: "optimum-energy",
   env: {
     node: true,
@@ -8,4 +8,4 @@ module.exports = {
   parserOptions: {
     sourceType: "module"
   }
-}
+};
