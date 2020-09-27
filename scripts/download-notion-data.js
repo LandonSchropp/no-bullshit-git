@@ -19,9 +19,37 @@ function createDocumentFragmentFromElements(document, elements) {
   }, document.createDocumentFragment());
 }
 
+function parseList(element) {
+  if (!element) {
+    return element;
+  }
+
+  return Array.from(element.children).map(child => child.innerHTML);
+}
+
+function parseSection(fragment) {
+
+  // Grab the known elements
+  let header = fragment.querySelector("h1, h2");
+  let subhead = fragment.querySelector("h1 + p, h2 + p");
+  let list = fragment.querySelector("ul");
+
+  // Remove the known elements from the fragment
+  header?.remove();
+  subhead?.remove();
+  list?.remove();
+
+  // Return the data in a structured format
+  return {
+    header: header?.innerHTML,
+    subhead: subhead?.innerHTML,
+    list: parseList(list),
+    content: parseList(fragment)
+  };
+}
+
 function parseHTML(html) {
   let document = new JSDOM(html).window.document;
-  console.log(html);
 
   // Break the document down into child elements, split them into sections and then parse the
   // sections.
@@ -29,6 +57,7 @@ function parseHTML(html) {
     .groupBy(previousHeader)
     .values()
     .map(elements => createDocumentFragmentFromElements(document, elements))
+    .map(parseSection)
     .value();
 }
 
