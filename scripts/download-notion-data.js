@@ -54,6 +54,9 @@ function parseHTML(html) {
   // Break the document down into child elements, split them into sections and then parse the
   // sections.
   return _([ ...document.querySelector("body div").children ])
+    .thru(elements => {
+      return _.slice(elements, 0, _.findIndex(elements, element => element.tagName === "HR"));
+    })
     .groupBy(previousHeader)
     .values()
     .map(elements => createDocumentFragmentFromElements(document, elements))
