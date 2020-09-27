@@ -12,13 +12,15 @@
     "@babel/register": "^7.11.5",
     "@parcel/transformer-css": "^2.0.0-alpha.3",
     "@parcel/transformer-postcss": "^2.0.0-alpha.3",
+    "notion-api-js": "^2.3.4",
     "parcel": "^2.0.0-beta.1",
     "sass": "^1.26.11"
   },
   "scripts": {
     "lint": "eslint --max-warnings=0 .",
     "build": "parcel build --dist-dir build ./source/index.html",
-    "serve": "parcel serve --dist-dir build ./source/index.html"
+    "serve": "parcel serve --dist-dir build ./source/index.html",
+    "download-notion-data": "babel-node scripts/download-notion-data.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
