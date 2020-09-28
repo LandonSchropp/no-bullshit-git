@@ -13,9 +13,10 @@
     "@parcel/transformer-css": "^2.0.0-alpha.3",
     "@parcel/transformer-postcss": "^2.0.0-alpha.3",
     "jsdom": "^16.4.0",
-    "notion-api-js": "^2.3.4",
+    "node-fetch": "^2.6.1",
     "parcel": "^2.0.0-beta.1",
-    "sass": "^1.26.11"
+    "sass": "^1.26.11",
+    "unzipper": "^0.10.11"
   },
   "scripts": {
     "lint": "eslint --max-warnings=0 .",

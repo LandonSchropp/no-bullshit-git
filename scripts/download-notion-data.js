@@ -1,6 +1,6 @@
-import { JSDOM } from "jsdom";
-import Notion from "notion-api-js";
 import _ from "lodash";
+import { JSDOM } from "jsdom";
+import { fetchPage } from "./notion";
 
 // Returns the text for the H1 or H2 previous to the element. If the element is an H1 or H2, this
 // method returns the text for the element.
@@ -53,7 +53,7 @@ function parseHTML(html) {
 
   // Break the document down into child elements, split them into sections and then parse the
   // sections.
-  return _([ ...document.querySelector("body div").children ])
+  return _([ ...document.querySelector("body article").children ])
     .thru(elements => {
       return _.slice(elements, 0, _.findIndex(elements, element => element.tagName === "HR"));
     })
@@ -66,13 +66,12 @@ function parseHTML(html) {
 
 (async () => {
 
-  // Download and parse the landing page document
-  let notion = new Notion({ token: process.env.NOTION_API_TOKEN });
-  let notionLandingPageHTML = (await notion.getPageById(process.env.NOTION_LANDING_PAGE_ID)).HTML;
+  // Download the landing page's HTML
+  let html = await fetchPage(process.env.NOTION_API_TOKEN, process.env.NOTION_LANDING_PAGE_ID);
 
   // Split the landing page into sections
-  let sections = parseHTML(notionLandingPageHTML);
-  console.log(sections);
+  // let sections = parseHTML(html);
+  // console.log(sections);
 
   // Convert the sections into the appropriate data format
 
