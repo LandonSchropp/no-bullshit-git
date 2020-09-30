@@ -1,6 +1,11 @@
 import fetch from "node-fetch";
 import { Parse } from "unzipper";
 
+/**
+ * Sleeps for a given amount of time.
+ * @param milliseconds The number of milliseconds to sleep.
+ * @return A promise that resolves after the given number of milliseconds.
+ */
 async function sleep(milliseconds) {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -9,6 +14,13 @@ async function sleep(milliseconds) {
   });
 }
 
+/**
+ * Makes a POST request to Notion.
+ * @param token The Notion API token.
+ * @param path The path of the request to call to the Notion domain.
+ * @param data The data to pass in the body of the request, which will be serialized as JSON.
+ * @return Returns a promise that resolves of the JSON body of the Notion response.
+ */
 async function notionPost(token, path, body) {
 
   let response = await fetch(`https://www.notion.so${ path }`, {
@@ -27,7 +39,7 @@ async function notionPost(token, path, body) {
  * Using the internal Notion API, this method enqueues a task to download the page.
  * @param token The Notion API token.
  * @param pageId The ID of the page to download.
- * @return Returns a task ID that can be used to fetch the download URL.
+ * @return A task ID that can be used to fetch the download URL.
  */
 async function enqueueExportHTMLTask(token, pageId) {
   let responseBody = await notionPost(
@@ -52,6 +64,11 @@ async function enqueueExportHTMLTask(token, pageId) {
   return responseBody.taskId;
 }
 
+/**
+ * @param token The Notion API token.
+ * @param taskId The ID of the Notion export task.
+ * @return Returns a promise that resolves to the download URL.
+ */
 async function fetchNotionDownloadURL(token, taskId) {
   let responseBody = await notionPost(token, "/api/v3/getTasks", { taskIds: [ taskId ] });
   return responseBody.results[0].status.exportURL;
@@ -63,6 +80,7 @@ async function fetchNotionDownloadURL(token, taskId) {
  * NOTE: The implementation to this function is a bit cryptic. I copied and pasted from this
  * comment: https://github.com/node-fetch/node-fetch/issues/375#issuecomment-495953540, as well as
  * the examples from the unzipper library.
+ * @return Returns a promise that resolves to the download file.
  */
 async function downloadFile(url) {
   const response = await fetch(url);
