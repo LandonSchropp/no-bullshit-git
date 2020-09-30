@@ -123,6 +123,7 @@ export function parseHTML(html) {
     .thru(elements => {
       return _.slice(elements, 0, _.findIndex(elements, element => element.tagName === "HR"));
     })
+    .reject(element => /^\s*$/.test(element.innerHTML))
     .groupBy(previousHeader)
     .values()
     .map(elements => createDocumentFragmentFromElements(document, elements))
