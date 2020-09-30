@@ -102,7 +102,7 @@ export function parseHTML(html) {
   // Parse the HTML into a document
   let document = new JSDOM(html).window.document;
 
-  // Unfortunatley, there's a bug in Notion's HTML export where each list item is wrapped in its own
+  // Unfortunately, there's a bug in Notion's HTML export where each list item is wrapped in its own
   // unordered list element. This is a quick fix.
   [ ...document.querySelectorAll("ul + ul") ].forEach(element => {
     [ ...element.children ].forEach(child => {
