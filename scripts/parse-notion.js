@@ -42,7 +42,6 @@ function createDocumentFragmentFromElements(document, elements) {
 function parseListItem(element) {
 
   let match = element.innerHTML.match(LIST_ITEM_REGEX);
-  console.log(element.outerHTML, element.innerHTML);
 
   if (_.isNil(match)) {
     return element.innerHTML;

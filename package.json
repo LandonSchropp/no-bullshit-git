@@ -12,6 +12,7 @@
     "@babel/register": "^7.11.5",
     "@parcel/transformer-css": "^2.0.0-alpha.3",
     "@parcel/transformer-postcss": "^2.0.0-alpha.3",
+    "fs-extra": "^9.0.1",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
     "parcel": "^2.0.0-beta.1",
