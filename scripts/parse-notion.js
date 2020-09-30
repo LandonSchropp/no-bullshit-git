@@ -1,6 +1,8 @@
 import _ from "lodash";
 import { JSDOM } from "jsdom";
 
+const LIST_ITEM_REGEX = /<strong>\s*(.*):\s*<\/strong>\s*(.*)\s*/;
+
 /**
  * Returns the text for the H1 or H2 previous to the element. If the element is an H1 or H2, this
  * method returns the text for the element.
@@ -33,15 +35,36 @@ function createDocumentFragmentFromElements(document, elements) {
 }
 
 /**
+ * Parses an HTML list item into structured data.
+ * @param element The HTML element to parse.
+ * @return Returns structured data representing the list item.
+ */
+function parseListItem(element) {
+
+  let match = element.innerHTML.match(LIST_ITEM_REGEX);
+  console.log(element.outerHTML, element.innerHTML);
+
+  if (_.isNil(match)) {
+    return element.innerHTML;
+  }
+
+  return {
+    header: match[1],
+    content: match[2]
+  };
+}
+
+/**
  * Parses an HTMLUnorderedList element, transforming it into structured data.
  * @param element The list element to parse.
+ * @return Returns structured data representing the list.
  */
 function parseList(element) {
-  if (!element) {
+  if (_.isNil(element)) {
     return element;
   }
 
-  return Array.from(element.children).map(child => child.innerHTML);
+  return Array.from(element.children).map(parseListItem);
 }
 
 /**
