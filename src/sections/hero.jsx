@@ -1,9 +1,9 @@
 import React from "react";
 
-import { sectionData } from "../helpers/data-helper";
+import { useSectionData } from "../hooks/landing-page-data";
 
 export function Hero() {
-  let data = sectionData(/no bullshit/i);
+  let data = useSectionData(/no bullshit/i);
 
   return <header className="hero">
     <h1 className="hero__header">{ data.header }</h1>
