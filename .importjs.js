@@ -1,6 +1,6 @@
 module.exports = {
   aliases: {
-    _: "lodash",
+    _: "node_modules/lodash",
   },
   danglingCommas: false,
   maxLineLength: 100
