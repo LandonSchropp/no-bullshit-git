@@ -35,6 +35,18 @@ function createDocumentFragmentFromElements(document, elements) {
 }
 
 /**
+ * Removes an element from the document fragment and returns it.
+ * @param fragment The document fragment to query within.
+ * @param query The query string used to find the element.
+ * @return The queried element.
+ */
+function popElement(fragment, query) {
+  let element = fragment.querySelector(query);
+  element?.remove();
+  return element;
+}
+
+/**
  * Parses an HTML list item into structured data.
  * @param element The HTML element to parse.
  * @return Returns structured data representing the list item.
@@ -67,21 +79,58 @@ function parseList(element) {
 }
 
 /**
+ * Parses the section document fragment into structured data.
+ * @param fragment The document fragment to parse.
+ * @return Returns structured data representing the section.
+ */
+function parsePricingSection(fragment) {
+
+  // Grab the known elements
+  let header = popElement(fragment, "h1, h2");
+  let guarantee = popElement(fragment, "p");
+  let discount = popElement(fragment, "p");
+  let bulkDiscount = popElement(fragment, "p");
+  let dimensions = popElement(fragment, "ul");
+  let tiers = popElement(fragment, "ul");
+
+  // Parse out the content in the tiers
+  tiers = parseList(tiers).map(tier => {
+    let match = _.tail(tier.match(/(.*)\((.*)\/(.*)\)/));
+
+    return {
+      header: match[1],
+      price: match[2],
+      discountedPrice: match[3]
+    };
+  });
+
+  // Return the structured data
+  return {
+    header: header.innerHTML,
+    guarantee: guarantee.innerHTML,
+    discount: discount.innerHTML,
+    bulkDiscount: bulkDiscount.innerHTML,
+    dimensions: parseList(dimensions),
+    tiers
+  };
+}
+
+/**
  * Parses a document fragment containing elements for a section into structured data.
  * @param fragment The document fragment to parse.
  * @return Returns structured data representing the section.
  */
 function parseSection(fragment) {
 
-  // Grab the known elements
-  let header = fragment.querySelector("h1, h2");
-  let subhead = fragment.querySelector("h1 + p, h2 + p");
-  let list = fragment.querySelector("ul");
+  // If this is the pricing section, use a special parser
+  if (/pricing/i.test(fragment.querySelector("h1, h2").innerHTML)) {
+    return parsePricingSection(fragment);
+  }
 
-  // Remove the known elements from the fragment
-  header?.remove();
-  subhead?.remove();
-  list?.remove();
+  // Grab the known elements
+  let header = popElement(fragment, "h1, h2");
+  let subhead = popElement(fragment, "h1 + p, h2 + p");
+  let list = popElement(fragment, "ul");
 
   // Return the data in a structured format
   return {
