@@ -9,8 +9,8 @@ import { Pricing } from "../sections/pricing";
 import { SEO } from "../components/seo";
 import { Why } from "../sections/why";
 
-const IndexPage = () =>
-  <React.Fragment>
+export default function IndexPage() {
+  return <>
     <SEO />
     <Layout>
       <Hero />
@@ -20,6 +20,5 @@ const IndexPage = () =>
       <FAQ />
       <Pricing />
     </Layout>
-  </React.Fragment>;
-
-export default IndexPage;
+  </>;
+}
