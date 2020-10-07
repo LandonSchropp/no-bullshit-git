@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Benefits } from "../sections/benefits";
 import { Hero } from "../sections/hero";
 import { Why } from "../sections/why";
 import Layout from "../components/layout";
@@ -11,6 +12,7 @@ const IndexPage = () =>
     <Layout>
       <Hero />
       <Why />
+      <Benefits />
     </Layout>
   </React.Fragment>;
 
