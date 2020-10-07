@@ -1,15 +1,14 @@
-import React from "react"
+import React from "react";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const IndexPage = () => (
+const IndexPage = () =>
   <React.Fragment>
     <SEO title="Home" />
     <Layout>
       <p>Hello!</p>
     </Layout>
-  </React.Fragment>
-)
+  </React.Fragment>;
 
 export default IndexPage;
