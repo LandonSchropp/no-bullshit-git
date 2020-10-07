@@ -113,10 +113,7 @@ export function parseHTML(html) {
   });
 
   // Extract the content from the document
-  let content = [
-    ...Array.from(document.querySelector("header").children),
-    ...Array.from(document.querySelector(".page-body").children)
-  ];
+  let content = Array.from(document.querySelector(".page-body").children);
 
   // Remove the unused content, Split it into sections and parse them.
   return _(content)
