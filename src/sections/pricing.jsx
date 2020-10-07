@@ -25,7 +25,15 @@ export function Pricing() {
                 data.dimensions.map(dimension => <li key={ dimension }>{ dimension }</li>)
               }
             </ul>
-            <button type="button">Purchase</button>
+
+            { /* TODO: Figure out how to place this somewhere better. */ }
+            <a
+              className="gumroad-button"
+              data-gumroad-params="email=sahil@gumroad.com&price=10"
+              href="https://gum.co/no-bullshit-git"
+            >
+              Purchase
+            </a>
           </div>;
         })
       }

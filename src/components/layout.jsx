@@ -6,11 +6,13 @@ import { Header } from "./header";
 
 export function Layout({ children }) {
   return (
-    <main>
-      <Header />
-      { children }
-      <Footer />
-    </main>
+    <>
+      <main>
+        <Header />
+        { children }
+        <Footer />
+      </main>
+    </>
   );
 }
 
