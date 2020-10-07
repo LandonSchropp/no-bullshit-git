@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Benefits } from "../sections/benefits";
+import { FAQ } from "../sections/faq";
 import { Hero } from "../sections/hero";
 import { Learn } from "../sections/learn";
 import { Why } from "../sections/why";
@@ -15,6 +16,7 @@ const IndexPage = () =>
       <Why />
       <Benefits />
       <Learn />
+      <FAQ />
     </Layout>
   </React.Fragment>;
 
