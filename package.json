@@ -5,28 +5,20 @@
   "author": "Landon Schropp <schroppl@gmail.com> (https://landonschropp.com)",
   "license": "UNLICENSED",
   "dependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
-    "@parcel/transformer-css": "^2.0.0-alpha.3",
-    "@parcel/transformer-postcss": "^2.0.0-alpha.3",
     "fs-extra": "^9.0.1",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
-    "parcel": "^2.0.0-beta.1",
+    "nunjucks": "^3.2.2",
     "sass": "^1.26.11",
     "unzipper": "^0.10.11"
   },
   "scripts": {
     "lint": "eslint --max-warnings=0 .",
-    "build": "parcel build --dist-dir build ./source/index.html",
-    "serve": "parcel serve --dist-dir build ./source/index.html",
+    "build": "parcel build --dist-dir build ./source/index.njk",
+    "serve": "parcel serve --dist-dir build ./source/index.njk",
     "download-notion-data": "babel-node scripts/download-notion-data.js"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.11.5",
     "eslint": "^7.9.0",
     "eslint-config-optimum-energy": "^0.7.0",
     "import-js": "^4.0.2",
