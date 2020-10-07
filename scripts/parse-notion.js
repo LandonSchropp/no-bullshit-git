@@ -128,8 +128,8 @@ function parseSection(fragment) {
   }
 
   // Grab the known elements
-  let header = popElement(fragment, "h1, h2");
   let subhead = popElement(fragment, "h1 + p, h2 + p");
+  let header = popElement(fragment, "h1, h2");
   let list = popElement(fragment, "ul");
 
   // Return the data in a structured format
