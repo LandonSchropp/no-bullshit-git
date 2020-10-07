@@ -21,6 +21,7 @@
     "gatsby-plugin-sharp": "^2.6.37",
     "gatsby-source-filesystem": "^2.3.31",
     "gatsby-transformer-sharp": "^2.5.16",
+    "html-react-parser": "^0.14.0",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
     "nunjucks": "^3.2.2",
