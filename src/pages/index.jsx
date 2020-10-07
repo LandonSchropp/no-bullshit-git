@@ -1,13 +1,14 @@
 import React from "react";
 
+import { Hero } from '../sections/hero';
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const IndexPage = () =>
   <React.Fragment>
-    <SEO title="Home" />
+    <SEO title="No Bullshit Git" />
     <Layout>
-      <p>Hello!</p>
+      <Hero />
     </Layout>
   </React.Fragment>;
 
