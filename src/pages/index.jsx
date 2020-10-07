@@ -6,7 +6,8 @@ import { Hero } from "../sections/hero";
 import { Learn } from "../sections/learn";
 import { Why } from "../sections/why";
 import { Pricing } from "../sections/pricing";
-import Layout from "../components/layout";
+import { Layout } from "../components/layout";
+
 import SEO from "../components/seo";
 
 const IndexPage = () =>
