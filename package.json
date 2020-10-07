@@ -5,7 +5,12 @@
   "author": "Landon Schropp <schroppl@gmail.com> (https://landonschropp.com)",
   "license": "UNLICENSED",
   "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
     "@babel/eslint-parser": "^7.11.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
     "fs-extra": "^9.0.1",
     "gatsby": "^2.24.66",
     "gatsby-image": "^2.4.20",
@@ -35,6 +40,7 @@
   "devDependencies": {
     "eslint": "^7.9.0",
     "eslint-config-optimum-energy": "^0.7.0",
+    "eslint-plugin-react": "^7.21.3",
     "import-js": "^4.0.2",
     "javascript-typescript-langserver": "^2.11.3"
   }
