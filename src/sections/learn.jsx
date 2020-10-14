@@ -6,7 +6,7 @@ export function Learn() {
   let data = useSectionData(/learn/i);
 
   return <section className="learn">
-    <h2>{ data.header }</h2>
+    <h2 className="learn__header">{ data.header }</h2>
 
     <ul className="learn-list">
       { data.list.map(item => <li key={ item } className="learn-list__item">{ item }</li>) }

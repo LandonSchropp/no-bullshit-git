@@ -7,7 +7,7 @@ export function Why() {
 
   return <section className="why">
     <h2>{ data.header }</h2>
-    <p className="subhead">{ data.subhead }</p>
+    <p className="subhead why__subhead">{ data.subhead }</p>
 
     <ul className="checklist">
       { data.list.map(item => <li className="checklist__item" key={ item }>{ item }</li>) }

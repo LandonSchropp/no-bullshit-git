@@ -7,7 +7,7 @@ export function Benefits() {
 
   return <section className="benefits">
     <h2>{ data.header }</h2>
-    <p className="subhead">{ data.subhead }</p>
+    <p className="subhead benefits__subhead">{ data.subhead }</p>
 
     <div className="benefits__list">
       {
