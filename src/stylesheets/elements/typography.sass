@@ -1,4 +1,4 @@
-h1
+h1, h2
   line-height: 1em
   margin-top: $spacing
   margin-bottom: $spacing
@@ -7,14 +7,9 @@ h1
   font-weight: 700
   text-align: center
 
-.subhead
-  margin-top: $spacing
-  margin-bottom: $spacing
-  text-align: center
-
-h2
-  @extend h1
-
-p, ul, ol
-  margin: $spacing auto
+h3, .subhead, p, ul, ol
   max-width: calc(#{ $tablet-width } - #{ $spacing / 2 })
+  margin: $spacing auto
+
+h3, .subhead
+  text-align: center
