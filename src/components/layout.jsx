@@ -4,6 +4,8 @@ import React from "react";
 import { Footer } from "./footer";
 import { Header } from "./header";
 
+import "../stylesheets/index.sass";
+
 export function Layout({ children }) {
   return (
     <>
