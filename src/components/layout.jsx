@@ -7,14 +7,10 @@ import "normalize.css";
 import "../stylesheets/index.sass";
 
 export function Layout({ children }) {
-  return (
-    <>
-      <main>
-        { children }
-        <Footer />
-      </main>
-    </>
-  );
+  return <main>
+    { children }
+    <Footer />
+  </main>;
 }
 
 Layout.propTypes = {
