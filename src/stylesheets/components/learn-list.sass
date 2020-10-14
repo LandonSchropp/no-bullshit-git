@@ -3,9 +3,11 @@
   max-width: 100%
 
   display: grid
-  grid-template-columns: 1fr 1fr
   gap: $spacing
 
   &__item
     @extend .checklist__item
     margin: 0
+
+  +tablet
+    grid-template-columns: 1fr 1fr
