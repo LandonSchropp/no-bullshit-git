@@ -6,8 +6,8 @@ export function Pricing() {
   let data = useSectionData(/pricing/i);
 
   return <section className="pricing">
-    <h2 className="pricing__header">{ data.header }</h2>
-    <p className="pricing__guarantee">{ data.guarantee }</p>
+    <h2>{ data.header }</h2>
+    <p className="subhead">{ data.guarantee }</p>
     <p className="pricing__discount">{ data.discount }</p>
 
     <div className="pricing__tiers tiers">
