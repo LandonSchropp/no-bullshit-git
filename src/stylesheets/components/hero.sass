@@ -1,8 +1,33 @@
 .hero
   @include brown-theme
-  background: linear-gradient(90deg, $color--nero, $color--bean)
+
+  $curve-width: 50%
+
+  overflow-x: hidden
+  background: none
+  position: relative
+  padding-top: $spacing * 6
+  padding-bottom: $spacing * 6
 
   &__logo
     display: block
     margin: $spacing auto
     max-width: $spacing * 6
+
+  *
+    position: relative
+    z-index: 1
+
+  // Use a pseudoelement to create a curved background
+  &::before
+    content: "hello"
+    display: block
+    position: absolute
+    top: 0
+    left: -$curve-width
+    right: -$curve-width
+    bottom: 0
+
+    background: linear-gradient(90deg, $color--nero, $color--bean)
+    border-bottom-left-radius: 100%
+    border-bottom-right-radius: 100%
