@@ -1,0 +1,11 @@
+@mixin tablet
+  @media only screen and (min-width: $tablet-width)
+    @content
+
+@mixin desktop
+  @media only screen and (min-width: $desktop-width)
+    @content
+
+@mixin mobile-only
+  @media only screen and (max-width: #{ $tablet-width - 1px })
+    @content

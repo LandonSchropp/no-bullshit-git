@@ -1,2 +1,17 @@
 html, body
-  background-color: blue
+  height: 100%
+  margin: 0
+
+  // prevent the text from being resized on rotate in iOS
+  -webkit-text-size-adjust: none
+
+  font-family: "titillium", sans-serif
+  font-size: $base-font-size--mobile
+  font-weight: 400
+  line-height: $spacing
+
+  @include tablet
+    font-size: $base-font-size--tablet
+
+  @include desktop
+    font-size: $base-font-size--desktop
