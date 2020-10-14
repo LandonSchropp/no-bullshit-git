@@ -11,3 +11,10 @@ h1
   margin-top: $spacing
   margin-bottom: $spacing
   text-align: center
+
+h2
+  @extend h1
+
+p, ul, ol
+  margin: $spacing auto
+  max-width: calc(#{ $tablet-width } - #{ $spacing / 2 })

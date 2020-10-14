@@ -6,11 +6,11 @@ export function Why() {
   let data = useSectionData(/why/i);
 
   return <section className="why">
-    <h2 className="why__header">{ data.header }</h2>
-    <p className="why__subhead">{ data.subhead }</p>
+    <h2>{ data.header }</h2>
+    <p className="subhead">{ data.subhead }</p>
 
-    <ul>
-      { data.list.map(item => <li key={ item } className="why__list-item">{ item }</li>) }
+    <ul className="checklist">
+      { data.list.map(item => <li className="checklist__item" key={ item }>{ item }</li>) }
     </ul>
   </section>;
 }
