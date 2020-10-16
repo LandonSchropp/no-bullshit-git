@@ -2,6 +2,7 @@
   @include brown-theme
 
   $curve-width: 50%
+  $gradient-offset: $curve-width / ($curve-width * 2 + 100%) * 100%
 
   overflow-x: hidden
   background: none
@@ -28,6 +29,6 @@
     right: -$curve-width
     bottom: 0
 
-    background: url(../images/background-tile.svg), linear-gradient(110deg, $color--nero, $color--bean)
+    background: url(../images/background-tile.svg), linear-gradient(110deg, $color--nero $gradient-offset, $color--bean 100% - $gradient-offset)
     border-bottom-left-radius: 100%
     border-bottom-right-radius: 100%
