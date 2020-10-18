@@ -19,5 +19,13 @@
       top: 0
       left: 0
 
+
   &--check &__item::before
     background-image: url("../images/icons/check.svg")
+
+  &--check &__item--unchecked
+    color: #999
+    text-decoration: line-through
+
+    &::before
+      background-image: url("../images/icons/check-light.svg")

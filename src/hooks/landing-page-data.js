@@ -5,7 +5,7 @@ import reactParse from "html-react-parser";
 
 function recursivelyParseHTML(object) {
 
-  if (_.isNil(object)) {
+  if (_.isNil(object) || _.isBoolean(object)) {
     return object;
   }
 

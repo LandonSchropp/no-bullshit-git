@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import { useSectionData } from "../hooks/landing-page-data";
 
@@ -12,8 +13,9 @@ function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
     </p>
     <ul className="icon-list icon-list--check">
       {
-        dimensions.map(dimension => {
-          return <li className="icon-list__item" key={ dimension }>{ dimension }</li>;
+        dimensions.map(({ text, checked }) => {
+          let className = classNames("icon-list__item", { "icon-list__item--unchecked": !checked });
+          return <li className={ className } key={ text }>{ text }</li>;
         })
       }
     </ul>

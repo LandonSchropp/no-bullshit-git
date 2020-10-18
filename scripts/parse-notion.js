@@ -95,15 +95,20 @@ function parsePricingSection(fragment) {
 
   // Parse out the content in the tiers
   tiers = parseList(tiers).map(tier => {
-    let match = _.tail(tier.match(/(.*)\((.*)\/(.*)\)/));
+    let match = _.tail(tier.match(/(.*)\s+\((.*)\/(.*)\)\s+\((.*)\)/));
 
-    console.log(match);
+    let detailedDimensions = dimensions.map((text, index) => {
+      return {
+        text,
+        checked: index < match[3].length
+      };
+    });
 
     return {
       header: match[0],
       price: match[1],
       discountedPrice: match[2],
-      dimensions
+      dimensions: detailedDimensions
     };
   });
 
