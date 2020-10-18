@@ -15,9 +15,16 @@ button, .button
   transition: color 0.15s, background-color 0.15s
 
   background-color: $color--bean
+  box-shadow: 0 $spacing / 8 $spacing / 2 transparentie($color--black, 0.75)
 
   &, &:visited, &:active, &:hover
     color: $color--white
+
+  transition: transform 0.1s ease-in-out
+
+  &:hover
+    transform: scale(1.1)
+    cursor: pointer
 
   // &, &:active, &:visited, &:focus
   //   color: $white
