@@ -1,6 +1,34 @@
 import React from "react";
+import _ from "lodash";
 
+import { importHash } from "../../lib/import";
 import { useSectionData } from "../hooks/landing-page-data";
+
+const images = importHash(require.context("../images/benefits", false, /\.svg$/));
+
+function findImage(benefitHeader) {
+  return _.find(images, (image, path) => {
+    let pathWords = path
+      .replace(/\.\w*$/, "")
+      .replace(/[^-\w]+/g, "")
+      .split("-");
+
+    return _.every(pathWords, word => _.includes(benefitHeader.toLowerCase(), word));
+  });
+}
+
+function Benefit({ benefit: { header, content } }) {
+
+  return <div key={ header } className="benefit">
+    <img
+      className="benefit__image"
+      src={ findImage(header) }
+      alt={ header }
+    />
+    <h3 className="benefit__header">{ header }</h3>
+    <p className="benefit__content">{ content }</p>
+  </div>;
+}
 
 export function Benefits() {
   let data = useSectionData(/getting/i);
@@ -11,17 +39,7 @@ export function Benefits() {
 
     <div className="benefits__list">
       {
-        data.list.map(item => {
-          return <div key={ item.header } className="benefit">
-            <img
-              className="benefit__image"
-              src="http://www.fillmurray.com/500/500"
-              alt={ item.header }
-            />
-            <h3 className="benefit__header">{ item.header }</h3>
-            <p className="benefit__content">{ item.content }</p>
-          </div>;
-        })
+        data.list.map(benefit => <Benefit key={ benefit.header } benefit={ benefit } />)
       }
     </div>
   </section>;
