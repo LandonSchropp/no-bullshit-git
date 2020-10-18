@@ -13,4 +13,28 @@
     flex-direction: column-reverse
 
   &__regular-price, &__discounted-price
-    display: block
+    display: inline-block
+
+  &__regular-price
+    position: relative
+    text-decoration: none
+
+    &::after
+      $width: 40px
+
+      content: ""
+
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+
+      background-image: url("../images/strike.svg")
+      background-size: $spacing * 5.5 auto
+      background-repeat: no-repeat
+      background-position: center
+
+  &__discounted-price
+    color: $color--bean
+    font-family: $font-family--handwriting

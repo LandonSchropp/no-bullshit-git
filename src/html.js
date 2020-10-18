@@ -28,6 +28,11 @@ export default function HTML(props) {
           rel="stylesheet"
         />
 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap"
+          rel="stylesheet"
+        />
+
         { props.headComponents }
       </head>
       <body { ...props.bodyAttributes } id="__gatsby">
