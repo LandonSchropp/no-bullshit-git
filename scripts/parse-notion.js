@@ -90,7 +90,7 @@ function parsePricingSection(fragment) {
   let guarantee = popElement(fragment, "p");
   let discount = popElement(fragment, "p");
   let bulkDiscount = popElement(fragment, "p");
-  let dimensions = popElement(fragment, "ul");
+  let dimensions = parseList(popElement(fragment, "ul"));
   let tiers = popElement(fragment, "ul");
 
   // Parse out the content in the tiers
@@ -100,7 +100,8 @@ function parsePricingSection(fragment) {
     return {
       header: match[1],
       price: match[2],
-      discountedPrice: match[3]
+      discountedPrice: match[3],
+      dimensions
     };
   });
 
@@ -110,7 +111,6 @@ function parsePricingSection(fragment) {
     guarantee: guarantee.innerHTML,
     discount: discount.innerHTML,
     bulkDiscount: bulkDiscount.innerHTML,
-    dimensions: parseList(dimensions),
     tiers
   };
 }

@@ -2,6 +2,29 @@ import React from "react";
 
 import { useSectionData } from "../hooks/landing-page-data";
 
+function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
+  return <div className="tier">
+    <h3 className="tier__header">{ header }</h3>
+    <p className="tier__price">
+      <strike className="tier__regular-price">{ price }</strike>
+      { " " }
+      <span className="tier__discounted-price">{ discountedPrice }</span>
+    </p>
+    <ul>
+      { dimensions.map(dimension => <li key={ dimension }>{ dimension }</li>) }
+    </ul>
+
+    { /* TODO: Figure out how to place this somewhere better. */ }
+    <a
+      className="gumroad-button"
+      data-gumroad-params="email=sahil@gumroad.com&price=10"
+      href="https://gum.co/no-bullshit-git"
+    >
+      Purchase
+    </a>
+  </div>;
+}
+
 export function Pricing() {
   let data = useSectionData(/pricing/i);
 
@@ -12,30 +35,7 @@ export function Pricing() {
 
     <div className="pricing__tiers tiers">
       {
-        data.tiers.map(tier => {
-          return <div className="tier" key={ tier.header }>
-            <h3 className="tier__header">{ tier.header }</h3>
-            <p className="tier__price">
-              <strike className="tier__regular-price">{ tier.price }</strike>
-              { " " }
-              <span className="tier__discounted-price">{ tier.discountedPrice }</span>
-            </p>
-            <ul>
-              {
-                data.dimensions.map(dimension => <li key={ dimension }>{ dimension }</li>)
-              }
-            </ul>
-
-            { /* TODO: Figure out how to place this somewhere better. */ }
-            <a
-              className="gumroad-button"
-              data-gumroad-params="email=sahil@gumroad.com&price=10"
-              href="https://gum.co/no-bullshit-git"
-            >
-              Purchase
-            </a>
-          </div>;
-        })
+        data.tiers.map(tier => <Tier key={ tier.header } tier={ tier } />)
       }
     </div>
   </section>;
