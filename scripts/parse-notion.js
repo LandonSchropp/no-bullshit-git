@@ -97,10 +97,12 @@ function parsePricingSection(fragment) {
   tiers = parseList(tiers).map(tier => {
     let match = _.tail(tier.match(/(.*)\((.*)\/(.*)\)/));
 
+    console.log(match);
+
     return {
-      header: match[1],
-      price: match[2],
-      discountedPrice: match[3],
+      header: match[0],
+      price: match[1],
+      discountedPrice: match[2],
       dimensions
     };
   });
