@@ -13,9 +13,11 @@
       content: ""
       width: $icon-size
       height: $icon-size
-      background-image: url("../images/icons/check.svg")
       background-size: 100%
 
       position: absolute
       top: 0
       left: 0
+
+  &--check &__item::before
+    background-image: url("../images/icons/check.svg")

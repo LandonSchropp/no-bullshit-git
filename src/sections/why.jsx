@@ -9,7 +9,7 @@ export function Why() {
     <h2>{ data.header }</h2>
     <p className="subhead why__subhead">{ data.subhead }</p>
 
-    <ul className="icon-list">
+    <ul className="icon-list icon-list--check">
       { data.list.map(item => <li className="icon-list__item" key={ item }>{ item }</li>) }
     </ul>
   </section>;
