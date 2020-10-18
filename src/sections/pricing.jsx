@@ -10,18 +10,24 @@ function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
       { " " }
       <span className="tier__discounted-price">{ discountedPrice }</span>
     </p>
-    <ul>
-      { dimensions.map(dimension => <li key={ dimension }>{ dimension }</li>) }
+    <ul className="icon-list icon-list--check">
+      {
+        dimensions.map(dimension => {
+          return <li className="icon-list__item" key={ dimension }>{ dimension }</li>;
+        })
+      }
     </ul>
 
     { /* TODO: Figure out how to place this somewhere better. */ }
-    <a
-      className="gumroad-button"
-      data-gumroad-params="email=sahil@gumroad.com&price=10"
-      href="https://gum.co/no-bullshit-git"
-    >
-      Purchase
-    </a>
+    <div className="call-to-action">
+      <a
+        className="gumroad-button button"
+        data-gumroad-params="email=sahil@gumroad.com&price=10"
+        href="https://gum.co/no-bullshit-git"
+      >
+        Purchase
+      </a>
+    </div>
   </div>;
 }
 

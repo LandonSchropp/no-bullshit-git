@@ -4,5 +4,9 @@
     margin-bottom: $spacing--header
     text-align: center
 
-  &__prices
-    text-align: center
+  &__tiers
+    display: grid
+    gap: $spacing
+
+    +desktop
+      grid-template-columns: 1fr 1fr 1fr
