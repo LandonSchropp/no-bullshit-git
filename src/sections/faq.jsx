@@ -12,7 +12,7 @@ export function FAQ() {
       data.content.map((item, index) => {
         return index % 2 === 0
           ? <h3 className="faq__question" key={ item }>{ item }</h3>
-          : <p key={ item }>{ item }</p>;
+          : <p className="faq__answer" key={ item }>{ item }</p>;
       })
     }
   </section>;
