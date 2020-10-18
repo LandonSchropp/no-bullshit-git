@@ -10,6 +10,16 @@ module.exports = {
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "No Bullshit Git",
+        start_url: "/",
+        background_color: "#683523",
+        theme_color: "#683523",
+        icon: "src/images/favicon.png"
+      }
+    },
     "gatsby-plugin-sass"
   ]
 };

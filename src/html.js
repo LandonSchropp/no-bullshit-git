@@ -15,6 +15,12 @@ export default function HTML(props) {
         />
 
         <link
+          rel="icon"
+          type="image/png"
+          href="/images/favicon.png"
+        />
+
+        <link
           href={
             "https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght" +
               "@0,400;0,700;1,400;1,700&display=swap"
