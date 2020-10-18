@@ -29,7 +29,7 @@ module.exports = {
     "react/no-unused-state": "warn",
     "react/no-will-update-set-state": "error",
     "react/prefer-es6-class": "error",
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
     "react/require-render-return": "error",
     "react/self-closing-comp": "warn",
     "react/sort-comp": "warn",
