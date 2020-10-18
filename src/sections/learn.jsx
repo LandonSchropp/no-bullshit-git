@@ -8,8 +8,12 @@ export function Learn() {
   return <section className="learn">
     <h2 className="learn__header">{ data.header }</h2>
 
-    <ul className="learn-list">
-      { data.list.map(item => <li key={ item } className="learn-list__item">{ item }</li>) }
+    <ul className="learn__list icon-list icon-list--check">
+      {
+        data.list.map(item => {
+          return <li key={ item } className="icon-list__item learn__list-item">{ item }</li>;
+        })
+      }
     </ul>
 
     <p className="subhead">{ data.content[0] }</p>

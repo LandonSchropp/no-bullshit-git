@@ -2,3 +2,15 @@
 
   &__header
     margin-bottom: $spacing--header
+
+  &__list
+    display: grid
+    gap: $spacing
+    max-width: 100%
+
+    +tablet
+      grid-template-columns: 1fr 1fr
+
+  &__list-item
+    margin: 0
+
