@@ -1,0 +1,55 @@
+.main-navigation
+  background-color: transparent
+
+  padding-top: 0
+  padding-bottom: 0
+  display: flex
+  align-items: center
+
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 100
+
+  border-bottom: 1px solid transparent
+
+  transition: all 0.1s ease-in-out
+
+  &--scrolled
+    background-color: $color--white
+    color: $color--bean
+    border-bottom: 1px solid $color--wild-sand
+    box-shadow: 0 $spacing / 2 $spacing #{ $color--shadow }
+
+  &__title
+    font-size: 1rem
+    text-align: left
+    color: $color--bean
+
+  &__title, &__link, &__button
+    margin: $spacing / 2 0
+
+  &__title, &__link
+    &, &:hover, &:visited, &:focus
+      color: $color--white
+
+      .main-navigation--scrolled &
+        color: $color--bean
+
+  &__link
+    margin-right: $spacing
+
+  &__title
+    margin-right: auto
+    font-weight: 700
+
+  &__button
+    text-shadow: none
+
+    .main-navigation:not(.main-navigation--scrolled) &
+      background-color: $color--white
+      color: $color--nero
+
+    .main-navigation--scrolled &
+      box-shadow: none
