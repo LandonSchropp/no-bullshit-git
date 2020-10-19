@@ -15,11 +15,5 @@ export function Learn() {
         })
       }
     </ul>
-
-    <p className="subhead">{ data.content[0] }</p>
-
-    <div className="call-to-action">
-      <button type="button">Download Sample</button>
-    </div>
   </section>;
 }

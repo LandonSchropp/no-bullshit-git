@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Benefits } from "../sections/benefits";
+import { Download } from "../sections/download";
 import { FAQ } from "../sections/faq";
 import { Hero } from "../sections/hero";
 import { Layout } from "../components/layout";
@@ -19,6 +20,7 @@ export default function IndexPage() {
       <Learn />
       <FAQ />
       <Pricing />
+      <Download />
     </Layout>
   </>;
 }

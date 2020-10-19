@@ -33,7 +33,7 @@ export function MainNavigation() {
       Pricing
     </AnchorLink>
 
-    <AnchorLink className="main-navigation__button button" href="#pricing">
+    <AnchorLink className="main-navigation__button button" href="#download">
       Get a Free Sample
     </AnchorLink>
   </nav>;
