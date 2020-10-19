@@ -1,8 +1,11 @@
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import React from "react";
 import classNames from "classnames";
 import useScrollPosition from "@react-hook/window-scroll";
 
 import { Logo } from "./logo";
+
+const NAVIGATIN_OFFSET = 76;
 
 export function MainNavigation() {
   const scrollY = useScrollPosition();
@@ -14,10 +17,24 @@ export function MainNavigation() {
       No Bullshit Git
     </a>
 
-    <a className="main-navigation__link" href="#pricing">Why?</a>
-    <a className="main-navigation__link" href="#pricing">Benefits</a>
-    <a className="main-navigation__link" href="#pricing">FAQ</a>
-    <a className="main-navigation__link" href="#pricing">Pricing</a>
-    <a className="main-navigation__button button" href="#pricing">Get a Free Sample</a>
+    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#why">
+      Why?
+    </AnchorLink>
+
+    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#benefits">
+      Benefits
+    </AnchorLink>
+
+    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#faq">
+      FAQ
+    </AnchorLink>
+
+    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#pricing">
+      Pricing
+    </AnchorLink>
+
+    <AnchorLink className="main-navigation__button button" href="#pricing">
+      Get a Free Sample
+    </AnchorLink>
   </nav>;
 }

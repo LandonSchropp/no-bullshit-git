@@ -33,7 +33,7 @@ function Benefit({ benefit: { header, content } }) {
 export function Benefits() {
   let data = useSectionData(/getting/i);
 
-  return <section className="benefits">
+  return <section className="benefits" id="benefits">
     <h2>{ data.header }</h2>
     <p className="subhead benefits__subhead">{ data.subhead }</p>
 

@@ -36,7 +36,7 @@ function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
 export function Pricing() {
   let data = useSectionData(/pricing/i);
 
-  return <section className="pricing">
+  return <section className="pricing" id="pricing">
     <h2>{ data.header }</h2>
     <p className="subhead">{ data.guarantee }</p>
     <p className="pricing__discount">{ data.discount }</p>

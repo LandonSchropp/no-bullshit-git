@@ -5,7 +5,7 @@ import { useSectionData } from "../hooks/landing-page-data";
 export function Why() {
   let data = useSectionData(/why/i);
 
-  return <section className="why">
+  return <section className="why" id="why">
     <h2>{ data.header }</h2>
     <p className="subhead why__subhead">{ data.subhead }</p>
 

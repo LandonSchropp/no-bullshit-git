@@ -5,7 +5,7 @@ import { useSectionData } from "../hooks/landing-page-data";
 export function FAQ() {
   let data = useSectionData(/frequently asked questions/i);
 
-  return <section className="faq">
+  return <section className="faq" id="faq">
     <h2 className="faq__header">{ data.header }</h2>
 
     {
