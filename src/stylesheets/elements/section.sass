@@ -1,9 +1,9 @@
 section, header, nav
-  padding: $spacing * 2 calc(50% - #{ $desktop-width / 2 })
+
+  padding: $spacing * 2 $spacing
+
+  +large-desktop
+    padding: $spacing * 2 calc(50% - #{ $large-desktop-width / 2 } + #{ $spacing })
 
   &:nth-of-type(even)
     +gray-theme
-
-  & > *
-    margin-left: $spacing / 2
-    margin-right: $spacing / 2

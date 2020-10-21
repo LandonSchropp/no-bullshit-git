@@ -6,6 +6,10 @@
   @media only screen and (min-width: $desktop-width)
     @content
 
+@mixin large-desktop
+  @media only screen and (min-width: $large-desktop-width)
+    @content
+
 @mixin mobile-only
   @media only screen and (max-width: #{ $tablet-width - 1px })
     @content
