@@ -17,7 +17,6 @@ export default function IndexPage() {
       <Hero />
       <Why />
       <Benefits />
-      <Learn />
       <FAQ />
       <Pricing />
       <Download />

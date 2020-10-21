@@ -31,7 +31,7 @@ function Benefit({ benefit: { header, content } }) {
 }
 
 export function Benefits() {
-  let data = useSectionData(/not included/i);
+  let data = useSectionData(/different/i);
 
   return <section className="benefits" id="benefits">
     <h2>{ data.header }</h2>
