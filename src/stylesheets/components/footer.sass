@@ -1,5 +1,21 @@
-footer
+.footer
   background-color: $color--black
   color: transparentize($color--white, 0.5)
   text-align: center
-  padding: $spacing / 2
+
+  padding-top: $spacing / 2
+  padding-bottom: $spacing / 2
+
+  &__copyright, &__email
+    margin: 0
+
+  &__copyright
+    margin-right: auto
+
+  +tablet
+    display: flex
+    gap: $spacing
+
+  &__anchor
+    &, &:visited, &:focus, &:hover
+      color: inherit
