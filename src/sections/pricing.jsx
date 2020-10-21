@@ -25,7 +25,7 @@ function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
     { /* TODO: Figure out how to place this somewhere better. */ }
     <div className="call-to-action">
       <a
-        className="gumroad-button button"
+        className="button"
         data-gumroad-params="email=sahil@gumroad.com&price=10"
         href="https://gum.co/no-bullshit-git"
       >
