@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 import { useSectionData } from "../hooks/landing-page-data";
+import shield from "../images/icons/shield.png";
 
 function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
   return <div className="tier">
@@ -38,7 +39,11 @@ export function Pricing() {
 
   return <section className="pricing" id="pricing">
     <h2>{ data.header }</h2>
-    <p className="subhead">{ data.guarantee }</p>
+    <p className="subhead">
+      <img className="inline-icon" src={ shield } />
+      { " " }
+      { data.guarantee }
+    </p>
     <p className="pricing__discount">{ data.discount }</p>
 
     <div className="pricing__tiers tiers">
