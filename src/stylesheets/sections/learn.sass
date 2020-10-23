@@ -8,4 +8,15 @@
     column-gap: $spacing
     row-gap: $spacing * 1.5
     grid-template-columns: 1fr 1fr 1fr
-    margin-bottom: $spacing * 2
+    margin-bottom: $spacing * 3
+
+  &__list
+    display: grid
+    gap: $spacing
+    max-width: $desktop-width
+
+    +tablet
+      grid-template-columns: 1fr 1fr
+
+  &__list-item
+    margin: 0

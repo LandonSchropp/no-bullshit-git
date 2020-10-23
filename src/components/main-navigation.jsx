@@ -17,8 +17,8 @@ export function MainNavigation() {
       No Bullshit Git
     </a>
 
-    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#why">
-      Why?
+    <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#learn">
+      Learn
     </AnchorLink>
 
     <AnchorLink offset={ NAVIGATIN_OFFSET } className="main-navigation__link" href="#benefits">
