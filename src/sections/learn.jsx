@@ -5,17 +5,17 @@ import _ from "lodash";
 import { LearnItem } from "../components/learn-item";
 import { useSectionData } from "../hooks/landing-page-data";
 
-export function Why() {
+export function Learn() {
   let data = useSectionData(/learn/i);
 
   let mainItems = _.slice(data.list, 0, 6);
   let secondaryItems = _.slice(data.list, 6);
 
-  return <section className="why" id="why">
+  return <section className="learn" id="learn">
     <h2>{ data.header }</h2>
-    <p className="subhead why__subhead">{ data.subhead }</p>
+    <p className="subhead learn__subhead">{ data.subhead }</p>
 
-    <div className="why__why-items">
+    <div className="learn__learn-items">
       {
         mainItems.map(item => <LearnItem key={ item } content={ item } />)
       }

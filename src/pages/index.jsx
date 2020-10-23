@@ -7,14 +7,14 @@ import { Hero } from "../sections/hero";
 import { Layout } from "../components/layout";
 import { Pricing } from "../sections/pricing";
 import { SEO } from "../components/seo";
-import { Why } from "../sections/why";
+import { Learn } from "../sections/learn";
 
 export default function IndexPage() {
   return <>
     <SEO />
     <Layout>
       <Hero />
-      <Why />
+      <Learn />
       <Benefits />
       <FAQ />
       <Pricing />
