@@ -6,7 +6,7 @@ import { renderToString } from "react-dom/server";
 import { importHash } from "../../lib/import";
 import { useSectionData } from "../hooks/landing-page-data";
 
-const images = importHash(require.context("../images/why-items", false, /\.svg$/));
+const images = importHash(require.context("../images/learn", false, /\.svg$/));
 
 function findImage(item) {
   return _.find(images, (image, path) => {

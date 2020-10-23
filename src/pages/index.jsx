@@ -5,7 +5,6 @@ import { Download } from "../sections/download";
 import { FAQ } from "../sections/faq";
 import { Hero } from "../sections/hero";
 import { Layout } from "../components/layout";
-import { Learn } from "../sections/learn";
 import { Pricing } from "../sections/pricing";
 import { SEO } from "../components/seo";
 import { Why } from "../sections/why";
