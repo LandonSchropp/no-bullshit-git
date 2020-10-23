@@ -1,35 +1,9 @@
 import React from "react";
 
 import _ from "lodash";
-import { renderToString } from "react-dom/server";
 
-import { importHash } from "../../lib/import";
+import { LearnItem } from "../components/learn-item";
 import { useSectionData } from "../hooks/landing-page-data";
-
-const images = importHash(require.context("../images/learn", false, /\.svg$/));
-
-function findImage(item) {
-  return _.find(images, (image, path) => {
-    let pathWords = path
-      .replace(/\.\w*$/, "")
-      .replace(/[^-\w]+/g, "")
-      .split("-");
-
-    return _.every(pathWords, word => _.includes(renderToString(item).toLowerCase(), word));
-  });
-}
-
-function WhyItem({ content }) {
-
-  return <div key={ content } className="why-item">
-    <img
-      className="why-item__image"
-      src={ findImage(content) }
-      alt={ content }
-    />
-    <p className="why-item__content">{ content }</p>
-  </div>;
-}
 
 export function Why() {
   let data = useSectionData(/learn/i);
@@ -43,7 +17,7 @@ export function Why() {
 
     <div className="why__why-items">
       {
-        mainItems.map(item => <WhyItem key={ item } content={ item } />)
+        mainItems.map(item => <LearnItem key={ item } content={ item } />)
       }
     </div>
 
