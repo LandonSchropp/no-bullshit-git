@@ -1,0 +1,55 @@
+.navigation
+  padding-top: 0
+  padding-bottom: 0
+
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 200
+
+  // In tablet layouts, display everything horizontally
+  &, &__items
+    +desktop
+      display: flex
+      align-items: center
+
+  & > :first-child
+    margin-right: auto
+
+  & > :first-child, &__items > *
+    display: block
+
+    +tablet-only
+      text-align: center
+
+  // Hide the items when the navigation menu is closed
+  &__items
+    .navigation:not(.navigation--open) &
+      +tablet-only
+        display: none
+
+  &__items > *:not(:last-of-type)
+    +desktop
+      margin-right : $spacing
+
+  &--open
+    +tablet-only
+      bottom: 0
+
+  &__menu-button
+    box-shadow: none
+    padding: $spacing * 1.25 / 2
+    background: transparent
+    border-radius: 0
+
+    position: absolute
+    top: 0
+    right: 0
+
+    +desktop
+      display: none
+
+  &__menu-icon
+    display: block
+    width: $spacing * 0.75

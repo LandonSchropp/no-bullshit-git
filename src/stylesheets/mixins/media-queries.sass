@@ -13,3 +13,7 @@
 @mixin mobile-only
   @media only screen and (max-width: #{ $tablet-width - 1px })
     @content
+
+@mixin tablet-only
+  @media only screen and (max-width: #{ $desktop-width - 1px })
+    @content
