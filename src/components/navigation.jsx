@@ -29,7 +29,7 @@ import hamburger from "../images/icons/hamburger.svg";
  * ```
  */
 export function Navigation({ className, children }) {
-  let [ open, setOpen ] = useState(true);
+  let [ open, setOpen ] = useState(false);
   const scrollY = useScrollPosition();
 
   let combinedClassName = classNames(

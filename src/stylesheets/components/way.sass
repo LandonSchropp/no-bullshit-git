@@ -1,0 +1,22 @@
+.way
+  display: grid
+  grid-template-columns: auto 1fr
+  gap: $spacing * 0.75
+
+  &__image
+    display: block
+    width: $spacing * 2
+
+  &__header, &__content
+    display: inline
+    font-size: inherit
+
+  &__header::after
+    content: ": "
+
+  &__header
+    margin-top: $spacing / 2
+    margin-bottom: $spacing / 4
+
+  &__content
+    margin-top: $spacing / 4
