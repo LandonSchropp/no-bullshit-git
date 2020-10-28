@@ -4,6 +4,9 @@ import logo from "../images/logo.svg";
 
 import { useSectionData } from "../hooks/landing-page-data";
 
+const FORM_URL = "https://landonschropp.us17.list-manage.com/subscribe/post" +
+  "?u=26cdb7a71c42ac5b132805731&amp;id=6cc57c2787";
+
 export function FreeStarterCourse() {
   let data = useSectionData(/git starter course/i);
 
@@ -22,11 +25,9 @@ export function FreeStarterCourse() {
       { data.list.map(item => <li key={ item } className="icon-list__item">{ item }</li>) }
     </ul>
 
-    <form className="call-to-action">
+    <form className="call-to-action" action={ FORM_URL } method="post" target="_blank">
       <label htmlFor="email">Enter Your Email</label>
-
-      <input id="email" type="email" placeholder="tomhanks@example.com" />
-
+      <input id="email" type="email" name="EMAIL" placeholder="tomhanks@example.com" />
       <p className="free-starter-course__reassurance">{ data.content[0] }</p>
 
       <div className="free-starter-course__submit">
