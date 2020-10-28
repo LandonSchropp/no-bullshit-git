@@ -1,0 +1,23 @@
+.free-starter-course
+  @include brown-theme
+
+  // Include extra padding for the main navigation
+  padding-top: $spacing * 3
+  padding-bottom: $spacing * 1
+
+  background: url(../images/background-tile.svg), linear-gradient(110deg, $color--nero, $color--bean)
+
+  &__logo
+    display: block
+    margin: $spacing auto
+    max-width: $spacing * 6
+
+  *
+    position: relative
+    z-index: 1
+
+  &__reassurance
+    font-style: italic
+    opacity: 0.75
+    font-size: 0.75rem
+    margin-top: 0
