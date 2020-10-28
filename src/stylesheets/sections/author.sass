@@ -1,0 +1,26 @@
+.author
+
+  &__content
+    display: grid
+    gap: $spacing
+    max-width: calc(#{ $desktop-width } - #{ $spacing * 2 })
+    margin: $spacing--header auto 0
+
+    +desktop
+      grid-template-columns: auto 1fr
+
+  &__image
+    $border-width: $spacing / 8
+
+    width: $spacing * 6
+    border-radius: 50%
+    grid-row: span 2
+
+    // The border is styled using a shadow so there's not an awkward gap between the border and the
+    // image
+    box-shadow: 0 0 0 $border-width $color--alto
+    margin: $border-width auto
+
+  &__paragraph
+    margin: 0
+    max-width: none

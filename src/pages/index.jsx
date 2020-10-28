@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Author } from "../sections/author";
 import { Benefits } from "../sections/benefits";
 import { Download } from "../sections/download";
 import { FAQ } from "../sections/faq";
@@ -18,6 +19,7 @@ export default function IndexPage() {
       <Learn />
       <Benefits />
       <FAQ />
+      <Author />
       <ManyWays />
       <Pricing />
       <Download />
