@@ -12,7 +12,10 @@ export function FreeStarterCourse() {
 
   // HACK: This is a hack to insert non-breaking spaces in the header
   let header = <>
-    The <em>Free</em> No&nbsp;Bullshit&nbsp;Git Stater Course
+    The <em>Free</em>
+    { " " }
+    No&nbsp;Bullshit&nbsp;Git
+    Stater&nbsp;Course
   </>;
 
   return <section className="free-starter-course">
