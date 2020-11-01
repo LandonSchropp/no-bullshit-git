@@ -4,11 +4,82 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import useScrollPosition from "@react-hook/window-scroll";
 
+import { LANDING_PAGE_SECTIONS } from "../hooks/landing-page-data";
 import { Logo } from "./logo";
-import close from "../images/icons/x.svg";
 import hamburger from "../images/icons/hamburger.svg";
 
 const NAVIGATIN_OFFSET = 76;
+
+function MobileNavigationItems({ onClick }) {
+  let [ , ...sections ] = LANDING_PAGE_SECTIONS;
+
+  return sections
+    .map(({ header, anchor }) => {
+
+      return <AnchorLink
+        key={ header }
+        offset={ NAVIGATIN_OFFSET }
+        className="main-navigation__menu-link"
+        href={ `#${ anchor }` }
+        onClick={ onClick }
+      >
+        <img
+          className="main-navigation__menu-icon"
+          src="https://www.fillmurray.com/20/20"
+          alt={ header }
+        />
+        { header }
+      </AnchorLink>;
+    });
+}
+
+function DesktopNavigationItems({ onClick }) {
+  return <>
+    <AnchorLink
+      offset={ NAVIGATIN_OFFSET }
+      className="main-navigation__link"
+      href="#learn"
+      onClick={ onClick }
+    >
+      Learn
+    </AnchorLink>
+
+    <AnchorLink
+      offset={ NAVIGATIN_OFFSET }
+      className="main-navigation__link"
+      href="#benefits"
+      onClick={ onClick }
+    >
+      Benefits
+    </AnchorLink>
+
+    <AnchorLink
+      offset={ NAVIGATIN_OFFSET }
+      className="main-navigation__link"
+      href="#faq"
+      onClick={ onClick }
+    >
+      FAQ
+    </AnchorLink>
+
+    <AnchorLink
+      offset={ NAVIGATIN_OFFSET }
+      className="main-navigation__link"
+      href="#pricing"
+      onClick={ onClick }
+    >
+      Pricing
+    </AnchorLink>
+
+    <AnchorLink
+      className="main-navigation__button button"
+      href="#download"
+      onClick={ onClick }
+    >
+      Get a Free Sample
+    </AnchorLink>
+  </>;
+}
 
 export function MainNavigation({ className }) {
   let [ open, setOpen ] = useState(false);
@@ -21,63 +92,7 @@ export function MainNavigation({ className }) {
   );
 
   let hamburgerIcon = <img className="main-navigation__menu-icon" src={ hamburger } alt="Menu" />;
-  let closeIcon = <img className="main-navigation__close-icon" src={ close } alt="Close" />;
 
-  let closeMenu = () => {
-    setOpen(false);
-  };
-
-  let menuItems = <>
-    <AnchorLink
-      offset={ NAVIGATIN_OFFSET }
-      className="main-navigation__link"
-      href="#learn"
-      onClick={ closeMenu }
-    >
-      Learn
-    </AnchorLink>
-
-    <AnchorLink
-      offset={ NAVIGATIN_OFFSET }
-      className="main-navigation__link"
-      href="#benefits"
-      onClick={ closeMenu }
-    >
-      Benefits
-    </AnchorLink>
-
-    <AnchorLink
-      offset={ NAVIGATIN_OFFSET }
-      className="main-navigation__link"
-      href="#faq"
-      onClick={ closeMenu }
-    >
-      FAQ
-    </AnchorLink>
-
-    <AnchorLink
-      offset={ NAVIGATIN_OFFSET }
-      className="main-navigation__link"
-      href="#pricing"
-      onClick={ closeMenu }
-    >
-      Pricing
-    </AnchorLink>
-
-    <AnchorLink
-      className="main-navigation__button button"
-      href="#download"
-      onClick={ closeMenu }
-    >
-      Get a Free Sample
-    </AnchorLink>
-  </>;
-
-  // TODO: The main problem here is that the scrollable anchor elements that are passed in as
-  // children eat the click events, preventing the menu from closing. :(
-  //
-  // The solution is to either hook into the DOM events of these elements directly, or figure out a
-  // way to prevent this library from eating eventHs.
   return <nav className={ combinedClassName }>
     <a className="main-navigation__title" href="/">
       <Logo className="main-navigation__logo" />
@@ -85,7 +100,7 @@ export function MainNavigation({ className }) {
     </a>
 
     <div className="main-navigation__items">
-      { menuItems }
+      <DesktopNavigationItems onClick={ () => setOpen(false) } />
     </div>
 
     <Menu
@@ -94,11 +109,11 @@ export function MainNavigation({ className }) {
       pageWrapId="main__content"
       outerContainerId="main"
       customBurgerIcon={ hamburgerIcon }
-      customCrossIcon={ closeIcon }
+      customCrossIcon={ false }
       noOverlay
       disableAutoFocus
     >
-      { menuItems }
+      <MobileNavigationItems onClick={ () => setOpen(false) } />
     </Menu>
   </nav>;
 }

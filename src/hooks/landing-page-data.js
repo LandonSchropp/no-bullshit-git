@@ -1,7 +1,8 @@
 import _ from "lodash";
+import reactParse from "html-react-parser";
+import { kebabCase } from "voca";
 
 import landingPageData from "../../data/landing-page.json";
-import reactParse from "html-react-parser";
 
 function recursivelyParseHTML(object) {
 
@@ -20,7 +21,10 @@ function recursivelyParseHTML(object) {
   return reactParse(object);
 }
 
-export const SECTIONS = landingPageData.map(recursivelyParseHTML);
+export const SECTIONS = landingPageData
+  .map(recursivelyParseHTML)
+  .map(section => ({ ...section, anchor: kebabCase(section.component) }));
+
 export const LANDING_PAGE_SECTIONS = _.reject(SECTIONS, { component: "FreeStarterCourse" });
 
 /**

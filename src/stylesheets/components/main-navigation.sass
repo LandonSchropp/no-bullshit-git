@@ -10,17 +10,23 @@
   &__title, &__link, &__button
     margin: $spacing / 2 0
 
-    +less-than-desktop
-      display: block
-
-  &__title, &__link
+  &__title, &__link, &__menu-link
     &:not(:hover)
       text-decoration: none
 
-  &__link
-    +less-than-desktop
-      &:first-of-type
-        margin-top: 0
+  &__menu-link
+    display: flex
+    align-items: center
+    padding: $spacing * 0.75
+
+    &:nth-of-type(odd)
+      background-color: $color--wild-sand
+
+    &:first-of-type
+      margin-top: 0
+
+  &__menu-icon
+    margin-right: $spacing / 2
 
   &__title
     font-weight: 700
@@ -110,10 +116,6 @@
     +desktop
       display: none
 
-  &__menu-icon
-    display: block
-    width: $spacing * 0.75
-
   &__close-icon
     display: block
     width: $spacing * 0.75
@@ -129,7 +131,7 @@
     box-shadow: -$spacing $spacing $spacing $color--shadow
 
   .bm-menu
-    background-color: transparentize($color--white, 0.04)
+    background-color: $color--white
 
 
   // Override the react-burger-menu styles
@@ -151,7 +153,7 @@
       box-shadow: none
 
   .bm-item-list
-    padding: $spacing
+    padding: $spacing / 2
 
   .bm-item
     // color: $color--white
@@ -160,3 +162,6 @@
     // Get rid of the neon orange outline on focus
     &:focus
       outline: none
+
+  .bm-icon
+    display: block
