@@ -6,7 +6,7 @@ import lock from "../images/icons/lock.png";
 import shield from "../images/icons/shield.png";
 
 export function Pricing() {
-  let data = useSectionData(/pricing/i);
+  let data = useSectionData("pricing");
 
   return <section className="pricing" id="pricing">
     <h2>{ data.header }</h2>

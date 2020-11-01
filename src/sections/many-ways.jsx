@@ -4,7 +4,7 @@ import { Way } from "../components/way";
 import { useSectionData } from "../hooks/landing-page-data";
 
 export function ManyWays() {
-  let data = useSectionData(/many ways/i);
+  let data = useSectionData("manyWays");
 
   return <section className="many-ways" id="many-ways">
     <h2>{ data.header }</h2>

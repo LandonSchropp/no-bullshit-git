@@ -4,7 +4,7 @@ import { Benefit } from "../components/benefit";
 import { useSectionData } from "../hooks/landing-page-data";
 
 export function Benefits() {
-  let data = useSectionData(/different/i);
+  let data = useSectionData("benefits");
 
   return <section className="benefits" id="benefits">
     <h2>{ data.header }</h2>

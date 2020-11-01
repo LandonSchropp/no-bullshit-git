@@ -6,7 +6,7 @@ import { useSectionData } from "../hooks/landing-page-data";
 import landon from "../images/landon.png";
 
 export function Author() {
-  let data = useSectionData(/author/i);
+  let data = useSectionData("author");
 
   // Grabbing the paragraphs from the data gets a little weird here, but it's not worth changing the
   // HTML parsing for this one use case.

@@ -6,7 +6,7 @@ import { LearnItem } from "../components/learn-item";
 import { useSectionData } from "../hooks/landing-page-data";
 
 export function Learn() {
-  let data = useSectionData(/learn/i);
+  let data = useSectionData("learn");
 
   let mainItems = _.slice(data.list, 0, 6);
   let secondaryItems = _.slice(data.list, 6);
