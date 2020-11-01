@@ -118,6 +118,10 @@
     display: block
     width: $spacing * 0.75
 
+  .bm-menu-wrap, .bm-burger-button
+    +desktop
+      display: none
+
   .bm-menu-wrap[aria-hidden="false"]
     box-shadow: 0 $spacing $spacing $color--shadow
 
