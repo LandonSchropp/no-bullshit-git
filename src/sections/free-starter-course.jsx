@@ -8,7 +8,7 @@ const FORM_URL = "https://landonschropp.us17.list-manage.com/subscribe/post" +
   "?u=26cdb7a71c42ac5b132805731&amp;id=6cc57c2787";
 
 export function FreeStarterCourse() {
-  let data = useSectionData(/git starter course/i);
+  let data = useSectionData("FreeStarterCourse");
 
   // HACK: This is a hack to insert non-breaking spaces in the header
   let header = <>

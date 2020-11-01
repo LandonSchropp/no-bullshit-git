@@ -3,7 +3,7 @@ import React from "react";
 import { useSectionData } from "../hooks/landing-page-data";
 
 export function FAQ() {
-  let data = useSectionData("faq");
+  let data = useSectionData("FAQ");
 
   return <section className="faq" id="faq">
     <h2 className="faq__header">{ data.header }</h2>

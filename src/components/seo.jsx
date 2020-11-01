@@ -14,7 +14,7 @@ import { useSectionData } from "../hooks/landing-page-data";
 export function SEO({ description, title }) {
 
   // Provide defaults for the data
-  let data = useSectionData("hero");
+  let data = useSectionData("Hero");
 
   /* eslint-disable no-param-reassign */
   title = title ?? data.header;

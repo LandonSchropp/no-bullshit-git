@@ -5,7 +5,7 @@ import logo from "../images/logo.svg";
 import { useSectionData } from "../hooks/landing-page-data";
 
 export function Hero() {
-  let data = useSectionData("hero");
+  let data = useSectionData("Hero");
 
   return <header className="hero">
     <img className="hero__logo" src={ logo } alt={ data.header } />
