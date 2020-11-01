@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"0T3R":function(e,n,t){"use strict";t.r(n),t.d(n,"default",(function(){return o}));var a=t("q1tI"),r=t.n(a),l=t("L12J"),u=t("dmsj"),c=t("UyaB");function o(){return r.a.createElement(r.a.Fragment,null,r.a.createElement(u.a,null),r.a.createElement(l.a,{fullScreen:!0},r.a.createElement(c.FreeStarterCourse,null)))}}}]);
+//# sourceMappingURL=component---src-pages-free-starter-course-jsx-0f9a9cc98531f76f2363.js.map
