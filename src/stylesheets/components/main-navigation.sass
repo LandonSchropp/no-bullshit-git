@@ -18,7 +18,8 @@
     display: flex
     align-items: center
 
-    &:nth-of-type(odd)
+    // TODO: Change this to odd when the social proof section is added
+    &:nth-of-type(even)
       background-color: $color--wild-sand
 
     &:first-of-type
@@ -152,11 +153,7 @@
     top: 0
     left: 0
 
-  // HACK: The size of the close button is hard-coded in pixels, so the padding needs to be as well.
-  .bm-cross-button
-    padding: 6px
-
-  .bm-burger-button, .bm-cross-button
+  .bm-burger-button
 
     & > button
       border-radius: 0

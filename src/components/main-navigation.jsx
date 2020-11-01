@@ -46,7 +46,7 @@ function MobileNavigationItems({ onClick }) {
       </AnchorLink>
     </div>,
     <p key="questions" className="main-navigation__menu-questions">
-      Questions? Reach out to <a href="mainto:schroppl@gmail.com">schroppl@gmail.com</a>.
+      Questions? Reach out to <a href="mailto:schroppl@gmail.com">schroppl@gmail.com</a>.
     </p>
   ];
 }
