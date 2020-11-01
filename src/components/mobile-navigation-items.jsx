@@ -9,7 +9,7 @@ import { findImage, importHash } from "../../lib/import";
 const images = importHash(require.context("../images/navigation-icons", false, /\.svg$/));
 
 // HACK: It's difficult to computationally determine this value. Instead, I'm hard-coding it.
-const NAVIGATIN_OFFSET = 76;
+const NAVIGATIN_OFFSET = 48;
 
 /**
  * This styles the mobile navigation items. This component is a little strange because the

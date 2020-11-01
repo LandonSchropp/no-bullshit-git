@@ -1,4 +1,12 @@
 .main-navigation
+  padding-top: 0
+  padding-bottom: 0
+
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 200
 
   background-color: $color--white
   color: $color--bean
@@ -7,16 +15,43 @@
   // Animate everything!
   transition: all 0.1s ease-in-out
 
-  &__title, &__link, &__button
-    margin: $spacing / 2 0
+  // This fix is required to correctly position the react-burger menu.
+  +less-than-desktop
+    padding: 0
 
+  // In tablet layouts, display everything horizontally
+  &, &__items
+
+    +desktop
+      display: flex
+      align-items: center
+
+  // Hide the items on mobile
+  &__items
+    +less-than-desktop
+      display: none
+
+  // Don't display underlines unless the user is hovering over the items
   &__title, &__link
     &:not(:hover)
       text-decoration: none
 
-  &__title
-    font-weight: 700
+  // Space out the menu items
+  &__link
+    margin: $spacing * 0.75 0
+    margin-right: $spacing
 
+  // Push the title to the left and the items to the right
+  &__title
+    display: block
+    text-align: center
+    font-weight: 700
+    line-height: $spacing * 2
+
+    +desktop
+      margin-right: auto
+
+  // Display the logo right next to the title and vertically center it
   &__logo
     width: $spacing * 0.8
     height: $spacing * 0.8
@@ -26,12 +61,29 @@
 
     fill: $color--bean
 
+  // Don't display a shadow on the menu button because it looks weird
   &__button
     text-shadow: none
 
-    +less-than-desktop
-      margin-top: $spacing
-      text-align: center
+  // Override the react-burger-menu styles
+  &__menu-button
+    width: $spacing * 0.75 + $spacing * 1.25
+    padding: $spacing * 1.25 / 2
+    position: absolute
+    top: 0
+    left: 0
+
+    +desktop
+      display: none
+
+    & > button
+      border-radius: 0
+      box-shadow: none
+
+  // Display the menu icon as a block instead of the default of inline-block so the button
+  // containing it doesn't not have extra space for the line-height.
+  &__menu-icon
+    display: block
 
   // Make everything transparent when the navigation is not scrolled
   &:not(.main-navigation--scrolled)
@@ -54,64 +106,3 @@
 
         &, &:hover, &:visited, &:focus
           color: $color--nero
-
-.main-navigation
-  padding-top: 0
-  padding-bottom: 0
-
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  z-index: 200
-
-  // This fix is required to correctly position the react-burger menu.
-  +less-than-desktop
-    padding: 0
-
-  // In tablet layouts, display everything horizontally
-  &, &__items
-    +desktop
-      display: flex
-      align-items: center
-
-  & > :first-child
-    margin-right: auto
-
-  & > :first-child, &__items > *
-    display: block
-
-    +less-than-desktop
-      text-align: center
-
-  // Hide the items when the navigation menu is closed
-  &__items
-    .main-navigation:not(.main-navigation--open) &
-      +less-than-desktop
-        display: none
-
-  &__items > *:not(:last-of-type)
-    +desktop
-      margin-right : $spacing
-
-  &--open
-    +less-than-desktop
-      bottom: 0
-
-  // Override the react-burger-menu styles
-  &__menu-button
-    width: $spacing * 0.75 + $spacing * 1.25
-    padding: $spacing * 1.25 / 2
-    position: absolute
-    top: 0
-    left: 0
-
-    +desktop
-      display: none
-
-    & > button
-      border-radius: 0
-      box-shadow: none
-
-  &__menu-icon
-    display: block

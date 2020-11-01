@@ -8,7 +8,9 @@ import { Logo } from "./logo";
 import { MobileNavigationItems } from "./mobile-navigation-items";
 import hamburger from "../images/icons/hamburger.svg";
 
-const NAVIGATIN_OFFSET = 76;
+// NOTE: It's very difficult to determine the navigation height computationally. I'm hardcoding it
+// instead.
+const NAVIGATIN_OFFSET = 75;
 
 function DesktopNavigationItems({ onClick }) {
   return <>
