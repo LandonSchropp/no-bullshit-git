@@ -88,6 +88,7 @@ export function MainNavigation({ className }) {
       customBurgerIcon={ hamburgerIcon }
       customCrossIcon={ false }
       itemListClassName="mobile-navigation-items__items"
+      burgerButtonClassName="main-navigation__menu-button"
       className="mobile-navigation-items"
       noOverlay
       disableAutoFocus

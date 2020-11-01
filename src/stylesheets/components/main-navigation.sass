@@ -98,27 +98,20 @@
     +less-than-desktop
       bottom: 0
 
-  &__close-icon
-    display: block
-    width: $spacing * 0.75
-
   // Override the react-burger-menu styles
-  .bm-burger-button
+  &__menu-button
     width: $spacing * 0.75 + $spacing * 1.25
     padding: $spacing * 1.25 / 2
     position: absolute
     top: 0
     left: 0
 
-  .bm-burger-button
+    +desktop
+      display: none
 
     & > button
       border-radius: 0
       box-shadow: none
 
-  .bm-icon
+  &__menu-icon
     display: block
-
-  .bm-burger-button
-    +desktop
-      display: none
