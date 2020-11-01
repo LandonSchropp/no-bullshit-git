@@ -10,7 +10,7 @@
   &__title, &__link, &__button
     margin: $spacing / 2 0
 
-    +tablet-only
+    +less-than-desktop
       display: block
 
   &__title, &__link
@@ -18,7 +18,7 @@
       text-decoration: none
 
   &__link
-    +tablet-only
+    +less-than-desktop
       &:first-of-type
         margin-top: 0
 
@@ -37,7 +37,7 @@
   &__button
     text-shadow: none
 
-    +tablet-only
+    +less-than-desktop
       margin-top: $spacing
       text-align: center
 
@@ -74,7 +74,7 @@
   z-index: 200
 
   // This fix is required to correctly position the react-burger menu.
-  +tablet-only
+  +less-than-desktop
     padding: 0
 
   // In tablet layouts, display everything horizontally
@@ -89,13 +89,13 @@
   & > :first-child, &__items > *
     display: block
 
-    +tablet-only
+    +less-than-desktop
       text-align: center
 
   // Hide the items when the navigation menu is closed
   &__items
     .main-navigation:not(.main-navigation--open) &
-      +tablet-only
+      +less-than-desktop
         display: none
 
   &__items > *:not(:last-of-type)
@@ -103,7 +103,7 @@
       margin-right : $spacing
 
   &--open
-    +tablet-only
+    +less-than-desktop
       bottom: 0
 
   &__menu-button

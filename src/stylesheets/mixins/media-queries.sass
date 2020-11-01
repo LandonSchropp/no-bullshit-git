@@ -10,10 +10,10 @@
   @media only screen and (min-width: $large-desktop-width)
     @content
 
-@mixin mobile-only
+@mixin less-than-tablet
   @media only screen and (max-width: #{ $tablet-width - 1px })
     @content
 
-@mixin tablet-only
+@mixin less-than-desktop
   @media only screen and (max-width: #{ $desktop-width - 1px })
     @content
