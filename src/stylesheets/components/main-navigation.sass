@@ -17,7 +17,6 @@
   &__menu-link
     display: flex
     align-items: center
-    padding: $spacing * 0.75
 
     &:nth-of-type(odd)
       background-color: $color--wild-sand
@@ -25,11 +24,22 @@
     &:first-of-type
       margin-top: 0
 
+  &__menu-link, &__menu-call-to-action
+    padding: $spacing * 0.75
+
+  &__menu-button
+    display: block
+    text-align: center
+
   &__menu-icon
     margin-right: $spacing / 2
 
   &__title
     font-weight: 700
+
+  &__menu-questions
+    margin: auto 0 $spacing * 2.5
+    text-align: center
 
   &__logo
     width: $spacing * 0.8
@@ -153,6 +163,8 @@
       box-shadow: none
 
   .bm-item-list
+    display: flex
+    flex-direction: column
     padding: $spacing / 2
 
   .bm-item
