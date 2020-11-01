@@ -7,8 +7,11 @@
     display: grid
     column-gap: $spacing
     row-gap: $spacing * 1.5
-    grid-template-columns: 1fr 1fr 1fr
     margin-bottom: $spacing * 3
+    grid-template-columns: 1fr 1fr
+
+    +tablet
+      grid-template-columns: 1fr 1fr 1fr
 
   &__list
     display: grid
