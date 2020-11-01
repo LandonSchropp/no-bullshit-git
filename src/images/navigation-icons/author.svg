@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="320px" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>navigation-icons/author</title>
+    <g id="navigation-icons/author" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M160,160 C204.1875,160 240,124.1875 240,80 C240,35.8125 204.1875,0 160,0 C115.8125,0 80,35.8125 80,80 C80,124.1875 115.8125,160 160,160 Z M216,180 L205.5625,180 C191.6875,186.375 176.25,190 160,190 C143.75,190 128.375,186.375 114.4375,180 L104,180 C57.625,180 20,217.625 20,264 L20,290 C20,306.5625 33.4375,320 50,320 L270,320 C286.5625,320 300,306.5625 300,290 L300,264 C300,217.625 262.375,180 216,180 Z" id="Shape" fill="#633220" fill-rule="nonzero"></path>
+    </g>
+</svg>

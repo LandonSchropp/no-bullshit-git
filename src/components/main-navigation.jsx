@@ -8,7 +8,10 @@ import _ from "lodash";
 
 import { LANDING_PAGE_SECTIONS } from "../hooks/landing-page-data";
 import { Logo } from "./logo";
+import { findImage, importHash } from "../../lib/import";
 import hamburger from "../images/icons/hamburger.svg";
+
+const images = importHash(require.context("../images/navigation-icons", false, /\.svg$/));
 
 const NAVIGATIN_OFFSET = 76;
 
@@ -24,7 +27,7 @@ function MobileNavigationItems({ onClick }) {
     >
       <img
         className="main-navigation__menu-icon"
-        src="https://www.fillmurray.com/20/20"
+        src={ findImage(images, anchor) }
         alt={ header }
       />
       { header }
