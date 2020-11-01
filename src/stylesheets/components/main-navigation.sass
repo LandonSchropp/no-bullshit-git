@@ -10,9 +10,17 @@
   &__title, &__link, &__button
     margin: $spacing / 2 0
 
+    +tablet-only
+      display: block
+
   &__title, &__link
     &:not(:hover)
       text-decoration: none
+
+  &__link
+    +tablet-only
+      &:first-of-type
+        margin-top: 0
 
   &__title
     font-weight: 700
@@ -29,8 +37,12 @@
   &__button
     text-shadow: none
 
+    +tablet-only
+      margin-top: $spacing
+      text-align: center
+
   // Make everything transparent when the navigation is not scrolled
-  &:not(.navigation--scrolled)
+  &:not(.main-navigation--scrolled)
     +desktop
       background-color: transparent
       box-shadow: none
@@ -50,3 +62,97 @@
 
         &, &:hover, &:visited, &:focus
           color: $color--nero
+
+.main-navigation
+  padding-top: 0
+  padding-bottom: 0
+
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 200
+
+  // This fix is required to correctly position the react-burger menu.
+  +tablet-only
+    padding: 0
+
+  // In tablet layouts, display everything horizontally
+  &, &__items
+    +desktop
+      display: flex
+      align-items: center
+
+  & > :first-child
+    margin-right: auto
+
+  & > :first-child, &__items > *
+    display: block
+
+    +tablet-only
+      text-align: center
+
+  // Hide the items when the navigation menu is closed
+  &__items
+    .main-navigation:not(.main-navigation--open) &
+      +tablet-only
+        display: none
+
+  &__items > *:not(:last-of-type)
+    +desktop
+      margin-right : $spacing
+
+  &--open
+    +tablet-only
+      bottom: 0
+
+  &__menu-button
+    +desktop
+      display: none
+
+  &__menu-icon
+    display: block
+    width: $spacing * 0.75
+
+  &__close-icon
+    display: block
+    width: $spacing * 0.75
+
+  .bm-menu-wrap[aria-hidden="false"]
+    box-shadow: 0 $spacing $spacing $color--shadow
+
+  .bm-menu-wrap[aria-hidden="true"]
+    box-shadow: -$spacing $spacing $spacing $color--shadow
+
+  .bm-menu
+    background-color: transparentize($color--white, 0.04)
+
+
+  // Override the react-burger-menu styles
+  .bm-burger-button
+    width: $spacing * 0.75 + $spacing * 1.25
+    padding: $spacing * 1.25 / 2
+    position: absolute
+    top: 0
+    left: 0
+
+  // HACK: The size of the close button is hard-coded in pixels, so the padding needs to be as well.
+  .bm-cross-button
+    padding: 6px
+
+  .bm-burger-button, .bm-cross-button
+
+    & > button
+      border-radius: 0
+      box-shadow: none
+
+  .bm-item-list
+    padding: $spacing
+
+  .bm-item
+    // color: $color--white
+    margin: $spacing $spacing
+
+    // Get rid of the neon orange outline on focus
+    &:focus
+      outline: none
