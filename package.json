@@ -36,7 +36,8 @@
     "react-burger-menu": "^2.9.0",
     "react-dom": "^17.0.0",
     "react-helmet": "^6.1.0",
-    "unzipper": "^0.10.11"
+    "unzipper": "^0.10.11",
+    "voca": "^1.4.0"
   },
   "scripts": {
     "build": "gatsby build",

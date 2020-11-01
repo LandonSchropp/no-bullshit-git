@@ -20,7 +20,8 @@ function recursivelyParseHTML(object) {
   return reactParse(object);
 }
 
-const SECTIONS = landingPageData.map(recursivelyParseHTML);
+export const SECTIONS = landingPageData.map(recursivelyParseHTML);
+export const LANDING_PAGE_SECTIONS = _.reject(SECTIONS, { component: "FreeStarterCourse" });
 
 /**
  * A helper hook that loads data for a section from the downloaded landing page data.
