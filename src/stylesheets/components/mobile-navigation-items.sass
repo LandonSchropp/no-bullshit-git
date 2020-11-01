@@ -1,0 +1,55 @@
+.mobile-navigation-items
+  background-color: $color--white
+
+  +desktop
+    display: none
+
+  &[aria-hidden="false"]
+    box-shadow: 0 $spacing $spacing $color--shadow
+
+  &[aria-hidden="true"]
+    box-shadow: -$spacing $spacing $spacing $color--shadow
+
+  &__link
+    display: flex
+    align-items: center
+
+    &:not(:hover)
+      text-decoration: none
+
+    // TODO: Change this to odd when the social proof section is added
+    &:nth-of-type(even)
+      background-color: $color--wild-sand
+
+    &:first-of-type
+      margin-top: 0
+
+  &__link, &__call-to-action
+    padding: $spacing * 0.75
+
+  &__link, &__call-to-action
+    padding: $spacing * 0.75
+
+  &__button
+    display: block
+    text-align: center
+
+  &__icon
+    width: $spacing
+    margin-right: $spacing / 2
+
+  &__title
+    font-weight: 700
+
+  &__questions
+    margin: auto 0 $spacing * 2.5
+    text-align: center
+
+  &__button
+    +desktop
+      display: none
+
+  &__items
+    display: flex
+    flex-direction: column
+    padding: 0 $spacing / 2 $spacing / 2

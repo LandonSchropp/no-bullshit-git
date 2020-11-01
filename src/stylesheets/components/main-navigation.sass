@@ -10,38 +10,12 @@
   &__title, &__link, &__button
     margin: $spacing / 2 0
 
-  &__title, &__link, &__menu-link
+  &__title, &__link
     &:not(:hover)
       text-decoration: none
 
-  &__menu-link
-    display: flex
-    align-items: center
-
-    // TODO: Change this to odd when the social proof section is added
-    &:nth-of-type(even)
-      background-color: $color--wild-sand
-
-    &:first-of-type
-      margin-top: 0
-
-  &__menu-link, &__menu-call-to-action
-    padding: $spacing * 0.75
-
-  &__menu-button
-    display: block
-    text-align: center
-
-  &__menu-icon
-    width: $spacing
-    margin-right: $spacing / 2
-
   &__title
     font-weight: 700
-
-  &__menu-questions
-    margin: auto 0 $spacing * 2.5
-    text-align: center
 
   &__logo
     width: $spacing * 0.8
@@ -124,27 +98,9 @@
     +less-than-desktop
       bottom: 0
 
-  &__menu-button
-    +desktop
-      display: none
-
   &__close-icon
     display: block
     width: $spacing * 0.75
-
-  .bm-menu-wrap, .bm-burger-button
-    +desktop
-      display: none
-
-  .bm-menu-wrap[aria-hidden="false"]
-    box-shadow: 0 $spacing $spacing $color--shadow
-
-  .bm-menu-wrap[aria-hidden="true"]
-    box-shadow: -$spacing $spacing $spacing $color--shadow
-
-  .bm-menu
-    background-color: $color--white
-
 
   // Override the react-burger-menu styles
   .bm-burger-button
@@ -160,18 +116,9 @@
       border-radius: 0
       box-shadow: none
 
-  .bm-item-list
-    display: flex
-    flex-direction: column
-    padding: 0 $spacing / 2 $spacing / 2
-
-  .bm-item
-    // color: $color--white
-    margin: $spacing $spacing
-
-    // Get rid of the neon orange outline on focus
-    &:focus
-      outline: none
-
   .bm-icon
     display: block
+
+  .bm-burger-button
+    +desktop
+      display: none
