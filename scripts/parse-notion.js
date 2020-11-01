@@ -1,6 +1,7 @@
 import _ from "lodash";
 import { JSDOM } from "jsdom";
 
+const HEADER_REGEX = /(.*) &lt;(.*)&gt;/;
 const LIST_ITEM_REGEX = /<strong>\s*(.*):\s*<\/strong>\s*(.*)\s*/;
 
 /**
@@ -47,6 +48,24 @@ function popElement(fragment, query) {
 }
 
 /**
+ * Parses an HTMLHeadingElement element, transforming it into structured data.
+ * @param element The header element to parse.
+ * @return Returns structured data representing the list.
+ */
+function parseHeader(element) {
+  let match = element.innerHTML.match(HEADER_REGEX);
+
+  if (_.isNil(match)) {
+    throw new Error(`The header was not in the correct format: ${ element.innerHTML }.`);
+  }
+
+  return {
+    header: match[1],
+    component: match[2]
+  };
+}
+
+/**
  * Parses an HTML list item into structured data.
  * @param element The HTML element to parse.
  * @return Returns structured data representing the list item.
@@ -86,7 +105,7 @@ function parseList(element) {
 function parsePricingSection(fragment) {
 
   // Grab the known elements
-  let header = popElement(fragment, "h1, h2");
+  let header = parseHeader(popElement(fragment, "h1, h2"));
   let guarantee = popElement(fragment, "p");
   let discount = popElement(fragment, "p");
   let bulkDiscount = popElement(fragment, "p");
@@ -115,7 +134,7 @@ function parsePricingSection(fragment) {
 
   // Return the structured data
   return {
-    header: header.innerHTML,
+    ...header,
     guarantee: guarantee.innerHTML,
     discount: discount.innerHTML,
     bulkDiscount: bulkDiscount.innerHTML,
@@ -138,12 +157,12 @@ function parseSection(fragment) {
 
   // Grab the known elements
   let subhead = popElement(fragment, "h1 + p, h2 + p");
-  let header = popElement(fragment, "h1, h2");
+  let header = parseHeader(popElement(fragment, "h1, h2"));
   let list = popElement(fragment, "ul");
 
   // Return the data in a structured format
   return {
-    header: header?.innerHTML,
+    ...header,
     subhead: subhead?.innerHTML,
     list: parseList(list),
     content: parseList(fragment)
