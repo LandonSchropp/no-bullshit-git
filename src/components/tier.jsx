@@ -9,12 +9,12 @@ export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
       { " " }
       <span className="tier__discounted-price">{ discountedPrice }</span>
     </p>
-    <ul className="icon-list icon-list--check tier__list">
+    <ul className="icon-list icon-list--pricing tier__list">
       {
         dimensions.map(({ text, checked }) => {
           let className = classNames("icon-list__item", {
-            "icon-list__item--unchecked": !checked,
-            "tier__item--unchecked": !checked
+            "icon-list__item--disabled": !checked,
+            "tier__item--disabled": !checked
           });
 
           return <li className={ className } key={ text }>{ text }</li>;

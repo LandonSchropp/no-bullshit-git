@@ -19,11 +19,44 @@
       top: 0
       left: 0
 
-
   &--check &__item::before
     background-image: url("../images/icons/check.svg")
 
-  &--check &__item--unchecked
+  &--pricing &__item
+
+    &:nth-of-type(1)::before
+      background-image: url("../images/pricing/book.svg")
+
+    &:nth-of-type(2)::before
+      background-image: url("../images/pricing/exercises.svg")
+
+    &:nth-of-type(3)::before
+      background-image: url("../images/pricing/videos.svg")
+
+    &:nth-of-type(4)::before
+      background-image: url("../images/pricing/slack.svg")
+
+    &:nth-of-type(5)::before
+      background-image: url("../images/pricing/coaching.svg")
+
+  &--pricing &__item--disabled
+
+    &:nth-of-type(1)::before
+      background-image: url("../images/pricing/book-gray.svg")
+
+    &:nth-of-type(2)::before
+      background-image: url("../images/pricing/exercises-gray.svg")
+
+    &:nth-of-type(3)::before
+      background-image: url("../images/pricing/videos-gray.svg")
+
+    &:nth-of-type(4)::before
+      background-image: url("../images/pricing/slack-gray.svg")
+
+    &:nth-of-type(5)::before
+      background-image: url("../images/pricing/coaching-gray.svg")
+
+  &__item--disabled
     color: #999
     text-decoration: line-through
 
