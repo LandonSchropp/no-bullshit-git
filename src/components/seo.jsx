@@ -11,6 +11,30 @@ import React from "react";
 
 import { useSectionData } from "../hooks/landing-page-data";
 
+// NOTE: This can't be done as a component, because Helmet doesn't allow non-head components to be
+// nested.
+function createAnalyticsTags() {
+
+  if (process.env.NODE_ENV !== "production") {
+    return null;
+  }
+
+  return [
+    <script key="first" async src="https://www.googletagmanager.com/gtag/js?id=G-N9GED0FRV8" />,
+    <script key="second">
+      {
+        `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-N9GED0FRV8');
+        `
+      }
+    </script>
+  ];
+}
+
 export function SEO({ description, title }) {
 
   // Provide defaults for the data
@@ -22,44 +46,18 @@ export function SEO({ description, title }) {
   /* eslint-enable no-param-reassign */
 
   return (
-    <Helmet
-      htmlAttributes={ { lang: "en" } }
-      title={ title }
-      meta={ [
-        {
-          name: `description`,
-          content: description
-        },
-        {
-          property: `og:title`,
-          content: title
-        },
-        {
-          property: `og:description`,
-          content: description
-        },
-        {
-          property: `og:type`,
-          content: `website`
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`
-        },
-        {
-          name: `twitter:creator`,
-          content: "@LandonSchropp"
-        },
-        {
-          name: `twitter:title`,
-          content: title
-        },
-        {
-          name: `twitter:description`,
-          content: description
-        }
-      ] }
-    />
+    <Helmet htmlAttributes={ { lang: "en" } }>
+      <title>{ title }</title>
+      <meta name="description" content={ description } />
+      <meta property="og:title" content={ title } />
+      <meta property="og:description" content={ description } />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={ "@LandonSchropp" } />
+      <meta name="twitter:title" content={ title } />
+      <meta name="twitter:description" content={ description } />
+      { createAnalyticsTags() }
+    </Helmet>
   );
 }
 
