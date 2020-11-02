@@ -50,14 +50,13 @@ function DesktopNavigationItems({ onClick }) {
       Pricing
     </AnchorLink>
 
-    <AnchorLink
-      offset={ NAVIGATIN_OFFSET }
+    <a
       className="main-navigation__link"
-      href="#download"
+      href="/free-starter-course"
       onClick={ onClick }
     >
       Free Starter Course
-    </AnchorLink>
+    </a>
 
     <AnchorLink
       className="main-navigation__button button"
