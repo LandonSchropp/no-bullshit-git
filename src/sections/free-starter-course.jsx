@@ -13,7 +13,7 @@ export function FreeStarterCourse() {
     <h1 className="free-starter-course__header">{ header }</h1>
     <p className="subhead">{ data.subhead }</p>
 
-    <ul className="icon-list icon-list--white-check free-starer-course__list">
+    <ul className="icon-list icon-list--white-check free-starter-course__list">
       { data.list.map(item => <li key={ item } className="icon-list__item">{ item }</li>) }
     </ul>
 
