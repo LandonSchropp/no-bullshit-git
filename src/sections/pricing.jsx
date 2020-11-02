@@ -25,6 +25,17 @@ export function Pricing() {
       }
     </div>
 
+    { /* TODO: Figure out how to place this somewhere better. */ }
+    <div className="call-to-action pricing__call-to-action">
+      <a
+        className="button"
+        data-gumroad-params="email=sahil@gumroad.com&price=10"
+        href="https://gum.co/no-bullshit-git"
+      >
+        Purchase No Bullshit Git
+      </a>
+    </div>
+
     <p className="subhead">
       <img className="inline-icon" src={ lock } />
       { " " }
