@@ -1,19 +1,25 @@
 .sign-up-form
-  max-width: $tablet-width
+  max-width: ($tablet-width + $mobile-width) / 2
   margin: $spacing * 2 auto
-  padding: $spacing
+  padding: 0 0 $spacing
 
   box-shadow: 0 $spacing / 2 $spacing $spacing $color--shadow
 
   background-color: $color--white
   color: $color--nero
   text-shadow: none
+  border-radius: $spacing / 4
 
   &__header
     margin: 0
+    background-color: #eee
+    border: 1px solid $color--alto
+    max-width: none
+    padding: $spacing / 2 $spacing
+    border-radius: $spacing / 4 $spacing / 4 0 0
 
   &__list
-    margin: $spacing auto
+    margin: $spacing
 
   // HACK: For this to have a higher selectivity than the styles from the theme in the parent
   // container.
@@ -29,4 +35,8 @@
     margin-bottom: $spacing / 2
 
   &__form
+    margin-top: $spacing
     text-align: center
+
+  input
+    width: calc(100% - #{ $spacing * 2 })
