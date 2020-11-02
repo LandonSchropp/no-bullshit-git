@@ -10,7 +10,7 @@ export function Download() {
     <p className="subhead">{ data.subhead }</p>
 
     <div className="call-to-action">
-      <button type="button">Download Sample</button>
+      <a href="/free-starter-course" className="button">Download Sample</a>
     </div>
   </section>;
 }

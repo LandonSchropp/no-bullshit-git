@@ -1,0 +1,32 @@
+.sign-up-form
+  max-width: $tablet-width
+  margin: $spacing * 2 auto
+  padding: $spacing
+
+  box-shadow: 0 $spacing / 2 $spacing $spacing $color--shadow
+
+  background-color: $color--white
+  color: $color--nero
+  text-shadow: none
+
+  &__header
+    margin: 0
+
+  &__list
+    margin: $spacing auto
+
+  // HACK: For this to have a higher selectivity than the styles from the theme in the parent
+  // container.
+  &__submit-button[type="submit"][type="submit"]
+    background-color: $color--bean
+    color: $color--white
+
+  &__reassurance
+    font-style: italic
+    opacity: 0.75
+    font-size: 0.75rem
+    margin-top: 0
+    margin-bottom: $spacing / 2
+
+  &__form
+    text-align: center
