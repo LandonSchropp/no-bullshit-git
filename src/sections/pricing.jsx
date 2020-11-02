@@ -2,8 +2,8 @@ import React from "react";
 
 import { Tier } from "../components/tier";
 import { useSectionData } from "../hooks/landing-page-data";
-import lock from "../images/icons/lock.png";
-import shield from "../images/icons/shield.png";
+import lock from "../images/icons/lock.svg";
+import shield from "../images/icons/shield.svg";
 
 export function Pricing() {
   let data = useSectionData("Pricing");
