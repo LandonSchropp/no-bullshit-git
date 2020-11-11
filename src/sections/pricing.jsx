@@ -12,7 +12,7 @@ export function Pricing() {
     <h2>{ data.header }</h2>
 
     <p className="subhead">
-      <img className="inline-icon" src={ shield } />
+      <img className="inline-icon" src={ shield } alt="" />
       { " " }
       { data.guarantee }
     </p>
@@ -37,7 +37,7 @@ export function Pricing() {
     </div>
 
     <p className="subhead">
-      <img className="inline-icon" src={ lock } />
+      <img className="inline-icon" src={ lock } alt="" />
       { " " }
       { data.secure }
     </p>
