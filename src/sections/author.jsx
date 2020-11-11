@@ -3,7 +3,7 @@ import React from "react";
 import _ from "lodash";
 
 import { useSectionData } from "../hooks/landing-page-data";
-import landon from "../images/landon.png";
+import landon from "../images/landon.jpg";
 
 export function Author() {
   let data = useSectionData("Author");
