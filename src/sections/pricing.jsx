@@ -31,6 +31,7 @@ export function Pricing() {
         className="button"
         data-gumroad-params="email=sahil@gumroad.com&price=10"
         href="https://gum.co/no-bullshit-git"
+        rel="noreferrer"
       >
         Purchase No Bullshit Git
       </a>
