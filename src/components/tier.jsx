@@ -30,7 +30,7 @@ export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
     <div className="call-to-action tier__call-to-action">
       <a
         className="button"
-        href={ `https://gum.co/no-bullshit-git?wanted=true&variant=${ gumroadVariant }` }
+        href={ `https://gum.co/no-bullshit-git?variant=${ gumroadVariant }&wanted=true` }
         rel="noreferrer"
       >
         Purchase
