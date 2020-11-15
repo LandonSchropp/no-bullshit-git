@@ -25,18 +25,7 @@ export function Pricing() {
       }
     </div>
 
-    { /* TODO: Figure out how to place this somewhere better. */ }
-    <div className="call-to-action pricing__call-to-action">
-      <a
-        className="button"
-        href="https://gum.co/no-bullshit-git?wanted=true"
-        rel="noreferrer"
-      >
-        Purchase No Bullshit Git
-      </a>
-    </div>
-
-    <p className="subhead">
+    <p className="subhead pricing__secure">
       <img className="inline-icon" src={ lock } alt="" />
       { " " }
       { data.secure }

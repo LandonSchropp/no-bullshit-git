@@ -2,6 +2,10 @@ import React from "react";
 import classNames from "classnames";
 
 export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
+
+  // For some reason, Gumroad won't accept an unencoded plus character in the URL variant.
+  let gumroadVariant = encodeURI(header).replace(/\+/g, "%2B");
+
   return <div className="tier">
     <h3 className="tier__header">{ header }</h3>
     <p className="tier__price">
@@ -21,5 +25,16 @@ export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
         })
       }
     </ul>
+
+    { /* TODO: Figure out how to place this somewhere better. */ }
+    <div className="call-to-action tier__call-to-action">
+      <a
+        className="button"
+        href={ `https://gum.co/no-bullshit-git?wanted=true&variant=${ gumroadVariant }` }
+        rel="noreferrer"
+      >
+        Purchase
+      </a>
+    </div>
   </div>;
 }
