@@ -29,8 +29,7 @@ export function Pricing() {
     <div className="call-to-action pricing__call-to-action">
       <a
         className="button"
-        data-gumroad-params="email=sahil@gumroad.com&price=10"
-        href="https://gum.co/no-bullshit-git"
+        href="https://gum.co/no-bullshit-git?wanted=true"
         rel="noreferrer"
       >
         Purchase No Bullshit Git
