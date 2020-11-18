@@ -4,7 +4,8 @@ import classNames from "classnames";
 export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
 
   // For some reason, Gumroad won't accept an unencoded plus character in the URL variant.
-  let gumroadVariant = encodeURI(header).replace(/\+/g, "%2B");
+  // TODO: Remove the slash hack once Gumroad fixes the plus bug.
+  let gumroadVariant = encodeURI(header).replace(/\+/g, "%2F");
 
   return <div className="tier">
     <h3 className="tier__header">{ header }</h3>
