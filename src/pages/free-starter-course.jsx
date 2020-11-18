@@ -6,7 +6,13 @@ import { FreeStarterCourse as FreeStarterCourseSection } from "../sections/free-
 
 export default function FreeStarterCourse() {
   return <>
-    <SEO />
+    <SEO
+      title="No BullShit Git - Free Starter Course"
+      description={
+        "A completely free, no-bullshit email course designed to take your Git skills to the " +
+          "next level."
+      }
+    />
     <Layout fullScreen>
       <FreeStarterCourseSection />
     </Layout>
