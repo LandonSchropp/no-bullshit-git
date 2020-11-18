@@ -1,6 +1,6 @@
 import { slide as Menu } from "react-burger-menu";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import useScrollPosition from "@react-hook/window-scroll";
 
@@ -71,6 +71,13 @@ function DesktopNavigationItems({ onClick }) {
 export function MainNavigation({ className }) {
   let [ open, setOpen ] = useState(false);
   const scrollY = useScrollPosition();
+
+  // BUG FIX: These three lines below fix a bug where the main navigation wouldn't display a
+  // background when the page was refresh while scrolled. Fore more information, check out this
+  // article: https://joshwcomeau.com/react/the-perils-of-rehydration/.
+  const [ mounted, setMounted ] = useState(false);
+  useEffect(() => setMounted(true));
+  if (!mounted) { return null; }
 
   let combinedClassName = classNames(
     "main-navigation",
