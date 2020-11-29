@@ -3,10 +3,21 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import useScrollPosition from "@react-hook/window-scroll";
+import { useLocation } from "@reach/router";
 
 import { Logo } from "./logo";
 import { MobileNavigationItems } from "./mobile-navigation-items";
 import hamburger from "../images/icons/hamburger.svg";
+
+// BUG FIX: This is a workaround for an issue with react-anchor-link-smooth-scroll:
+// https://github.com/mauricevancooten/react-anchor-link-smooth-scroll/issues/36.
+function Anchor({ children, href, ...props }) {
+  let location = useLocation();
+
+  return location.pathname === "/"
+    ? <AnchorLink href={ href.replace(/^\//, "") } { ...props }>{ children }</AnchorLink>
+    : <a href={ href } { ...props }>{ children }</a>;
+}
 
 // NOTE: It's very difficult to determine the navigation height computationally. I'm hardcoding it
 // instead.
@@ -14,41 +25,41 @@ const NAVIGATIN_OFFSET = 75;
 
 function DesktopNavigationItems({ onClick }) {
   return <>
-    <AnchorLink
+    <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
-      href="#learn"
+      href="/#learn"
       onClick={ onClick }
     >
       Learn
-    </AnchorLink>
+    </Anchor>
 
-    <AnchorLink
+    <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
-      href="#benefits"
+      href="/#benefits"
       onClick={ onClick }
     >
       Benefits
-    </AnchorLink>
+    </Anchor>
 
-    <AnchorLink
+    <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
-      href="#faq"
+      href="/#faq"
       onClick={ onClick }
     >
       FAQ
-    </AnchorLink>
+    </Anchor>
 
-    <AnchorLink
+    <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
-      href="#pricing"
+      href="/#pricing"
       onClick={ onClick }
     >
       Pricing
-    </AnchorLink>
+    </Anchor>
 
     <a
       className="main-navigation__link"
@@ -58,13 +69,13 @@ function DesktopNavigationItems({ onClick }) {
       Free Starter Course
     </a>
 
-    <AnchorLink
+    <Anchor
       className="main-navigation__button button"
-      href="#pricing"
+      href="/#pricing"
       onClick={ onClick }
     >
       Get Your Copy
-    </AnchorLink>
+    </Anchor>
   </>;
 }
 
