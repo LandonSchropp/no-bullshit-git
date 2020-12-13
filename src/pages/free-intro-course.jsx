@@ -2,19 +2,19 @@ import React from "react";
 
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
-import { FreeStarterCourse as FreeStarterCourseSection } from "../sections/free-starter-course";
+import { FreeIntroCourse as FreeIntroCourseSection } from "../sections/free-intro-course";
 
-export default function FreeStarterCourse() {
+export default function FreeIntroCourse() {
   return <>
     <SEO
-      title="No BullShit Git - Free Starter Course"
+      title="No BullShit Git - Free Intro Course"
       description={
         "A completely free, no-bullshit email course designed to take your Git skills to the " +
           "next level."
       }
     />
     <Layout fullScreen>
-      <FreeStarterCourseSection />
+      <FreeIntroCourseSection />
     </Layout>
   </>;
 }

@@ -63,10 +63,10 @@ function DesktopNavigationItems({ onClick }) {
 
     <a
       className="main-navigation__link"
-      href="/free-starter-course"
+      href="/free-intro-course"
       onClick={ onClick }
     >
-      Free Starter Course
+      Free Intro Course
     </a>
 
     <Anchor

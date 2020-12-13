@@ -7,7 +7,7 @@ const FORM_URL = "https://landonschropp.us17.list-manage.com/subscribe/post" +
   "?u=26cdb7a71c42ac5b132805731&amp;id=6cc57c2787";
 
 export function SignUpForm() {
-  let data = useSectionData("FreeStarterCourse");
+  let data = useSectionData("FreeIntroCourse");
 
   return <div className="sign-up-form">
     <h3 className="sign-up-form__header">Sign up for the Course</h3>

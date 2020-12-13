@@ -25,7 +25,7 @@ export const SECTIONS = landingPageData
   .map(recursivelyParseHTML)
   .map(section => ({ ...section, anchor: kebabCase(section.component) }));
 
-export const LANDING_PAGE_SECTIONS = _.reject(SECTIONS, { component: "FreeStarterCourse" });
+export const LANDING_PAGE_SECTIONS = _.reject(SECTIONS, { component: "FreeIntroCourse" });
 
 /**
  * A helper hook that loads data for a section from the downloaded landing page data.
