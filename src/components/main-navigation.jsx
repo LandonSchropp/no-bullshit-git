@@ -21,7 +21,7 @@ function Anchor({ children, href, ...props }) {
 
 // NOTE: It's very difficult to determine the navigation height computationally. I'm hardcoding it
 // instead.
-const NAVIGATIN_OFFSET = 75;
+const NAVIGATIN_OFFSET = 60;
 
 function DesktopNavigationItems({ onClick }) {
   return <>
