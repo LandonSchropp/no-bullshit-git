@@ -12,6 +12,9 @@
   color: $color--bean
   box-shadow: inset 0 -2px $color--wild-sand, 0 $spacing / 2 $spacing #{ $color--shadow }
 
+  +tablet
+    font-size: $font-size--small
+
   // Animate everything!
   transition: all 0.1s ease-in-out
 
@@ -38,8 +41,11 @@
 
   // Space out the menu items
   &__link
-    margin: $spacing * 0.75 0
-    margin-right: $spacing
+    margin: $spacing * 0.75 $spacing $spacing * 0.75 0
+
+    +tablet
+      margin: $spacing * 0.5 $spacing $spacing * 0.5 0
+
 
   // Push the title to the left and the items to the right
   &__title
@@ -64,6 +70,7 @@
   // Don't display a shadow on the menu button because it looks weird
   &__button
     text-shadow: none
+    padding: $spacing * 3 / 16 $spacing * 0.75
 
   // Override the react-burger-menu styles
   &__menu-button
