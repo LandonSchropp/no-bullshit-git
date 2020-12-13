@@ -17,3 +17,7 @@
 @mixin less-than-desktop
   @media only screen and (max-width: #{ $desktop-width - 1px })
     @content
+
+@mixin print
+  @media print
+    @content
