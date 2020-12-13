@@ -8,8 +8,10 @@ export function Hero() {
   let data = useSectionData("Hero");
 
   return <header className="hero">
-    <img className="hero__logo" src={ logo } alt={ data.header } />
-    <h1 className="hero__header">{ data.header }</h1>
+    <h1 className="hero__header">
+      <img className="hero__logo" src={ logo } alt={ data.header } />
+      { data.header }
+    </h1>
     <p className="subhead hero__subhead">{ data.subhead }</p>
     <div className="call-to-action">
       <button type="button">Get the Course</button>
