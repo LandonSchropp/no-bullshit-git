@@ -25,14 +25,6 @@ const NAVIGATIN_OFFSET = 60;
 
 function DesktopNavigationItems({ onClick }) {
   return <>
-    <Anchor
-      offset={ NAVIGATIN_OFFSET }
-      className="main-navigation__link"
-      href="/#learn"
-      onClick={ onClick }
-    >
-      Learn
-    </Anchor>
 
     <Anchor
       offset={ NAVIGATIN_OFFSET }
@@ -40,16 +32,16 @@ function DesktopNavigationItems({ onClick }) {
       href="/#benefits"
       onClick={ onClick }
     >
-      Benefits
+      Why Itʼs Different
     </Anchor>
 
     <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
-      href="/#faq"
+      href="/#learn"
       onClick={ onClick }
     >
-      FAQ
+      What Youʼll Learn
     </Anchor>
 
     <Anchor
