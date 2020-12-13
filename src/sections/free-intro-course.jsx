@@ -10,13 +10,15 @@ export function FreeIntroCourse() {
   let header = <>The <em>Free</em> { " " } No&nbsp;Bullshit&nbsp;Git Intro&nbsp;Course</>;
 
   return <section className="free-intro-course">
-    <h1 className="free-intro-course__header">{ header }</h1>
-    <p className="subhead">{ data.subhead }</p>
+    <div className="free-intro-course__content">
+      <h1 className="free-intro-course__header">{ header }</h1>
+      <p className="subhead">{ data.subhead }</p>
 
-    <ul className="icon-list icon-list--white-check free-intro-course__list">
-      { data.list.map(item => <li key={ item } className="icon-list__item">{ item }</li>) }
-    </ul>
+      <ul className="icon-list icon-list--white-check free-intro-course__list">
+        { data.list.map(item => <li key={ item } className="icon-list__item">{ item }</li>) }
+      </ul>
 
-    <SignUpForm />
+      <SignUpForm />
+    </div>
   </section>;
 }
