@@ -52,9 +52,8 @@ export function SEO({ description, title }) {
       <meta property="og:title" content={ title } />
       <meta property="og:description" content={ description } />
       <meta property="og:type" content="website" />
-
-      <meta property="og:image" content="https://nobullshitgit.com/open-graph.png">
-      <meta name="twitter:card" content="summary_large_image">
+      <meta property="og:image" content="https://nobullshitgit.com/open-graph.png" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={ "@LandonSchropp" } />
       { createAnalyticsTags() }
     </Helmet>
