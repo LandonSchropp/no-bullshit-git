@@ -1,11 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 
+import _ from "lodash";
+
 export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
 
   // For some reason, Gumroad won't accept an unencoded plus character in the URL variant.
   // TODO: Remove the slash hack once Gumroad fixes the plus bug.
-  let gumroadVariant = encodeURI(header).replace(/\+/g, "%2F");
+  let gumroadVariant = encodeURI(_.last(header.split(" + ")));
 
   return <div className="tier">
     <h3 className="tier__header">{ header }</h3>
