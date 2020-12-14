@@ -10,7 +10,7 @@ export function SignUpForm() {
   let data = useSectionData("FreeIntroCourse");
 
   return <div className="sign-up-form">
-    <h3 className="sign-up-form__header">Sign up for the Course</h3>
+    <h3 className="sign-up-form__header">Sign Up</h3>
 
     <form className="sign-up-form__form" action={ FORM_URL } method="post" target="_blank">
       <label htmlFor="email">Email</label>

@@ -14,11 +14,11 @@ export function FreeIntroCourse() {
       <h1 className="free-intro-course__header">{ header }</h1>
       <p className="subhead">{ data.subhead }</p>
 
+      <SignUpForm />
+
       <ul className="icon-list icon-list--white-check free-intro-course__list">
         { data.list.map(item => <li key={ item } className="icon-list__item">{ item }</li>) }
       </ul>
-
-      <SignUpForm />
     </div>
   </section>;
 }

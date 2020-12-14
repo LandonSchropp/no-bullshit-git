@@ -18,4 +18,14 @@
     margin: $spacing auto
 
   &__list
-    max-width: $spacing * 20
+    display: grid
+    gap: 0 $spacing
+    max-width: $mobile-width * 0.8
+
+    +tablet
+      max-width: $tablet-width
+      grid-template-columns: 1fr 1fr
+
+    +desktop
+      max-width: $desktop-width
+      grid-template-columns: 1fr 1fr 1fr
