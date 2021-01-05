@@ -17,9 +17,15 @@
     z-index: 1
 
   &__logo
-    top: 0.1em
-    margin-right: 0.25em
     height: $spacing * 2
+
+    +tablet
+      margin-right: 0.25em
+      top: 0.1em
+
+    +less-than-tablet
+      display: block
+      margin: 0 auto $spacing
 
   // Use a pseudoelement to create a curved background
   &::before
