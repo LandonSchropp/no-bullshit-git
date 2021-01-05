@@ -32,7 +32,15 @@ async function notionPost(token, path, body) {
     "body": JSON.stringify(body)
   });
 
-  return await response.json();
+  let responseBody = await response.json();
+
+  if (responseBody.errorId) {
+    throw new Error(
+      `The request failed with a ${ responseBody.name } error: ${ responseBody.message }`
+    );
+  }
+
+  return responseBody;
 }
 
 /**
