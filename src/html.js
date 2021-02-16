@@ -29,7 +29,6 @@ export default function HTML(props) {
         <div key="body" id="___gatsby" dangerouslySetInnerHTML={ { __html: props.body } } />
 
         { props.postBodyComponents }
-        <script src="https://gumroad.com/js/gumroad.js" />
       </body>
     </html>
   );

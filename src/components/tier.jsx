@@ -34,7 +34,8 @@ export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
       <a
         className="button"
         href={ `https://gum.co/no-bullshit-git?variant=${ gumroadVariant }&wanted=true` }
-        rel="noreferrer"
+        target="_blank"
+        rel="noreferrer noopener"
       >
         Purchase
       </a>
