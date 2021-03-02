@@ -27,6 +27,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        exclude: [
+          "/thank-you"
+        ]
       }
     }
   ]
