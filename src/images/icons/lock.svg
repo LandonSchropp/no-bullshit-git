@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="320px" height="320px" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>icons/lock</title>
-    <g id="icons/lock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M270,140 L255,140 L255,95 C255,42.625 212.375,0 160,0 C107.625,0 65,42.625 65,95 L65,140 L50,140 C33.4375,140 20,153.4375 20,170 L20,290 C20,306.5625 33.4375,320 50,320 L270,320 C286.5625,320 300,306.5625 300,290 L300,170 C300,153.4375 286.5625,140 270,140 Z M205,140 L115,140 L115,95 C115,70.1875 135.1875,50 160,50 C184.8125,50 205,70.1875 205,95 L205,140 Z" id="Shape" fill="#1C0700" fill-rule="nonzero"></path>
-    </g>
-</svg>
