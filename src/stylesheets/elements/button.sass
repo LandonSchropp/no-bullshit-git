@@ -20,8 +20,42 @@ button, .button
   &, &:visited, &:active, &:hover
     color: $color--white
 
-  transition: transform 0.1s ease-in-out
+  transition: transform 0.1s ease-in-out, color 0.25s ease-in-out
 
   &:hover
     transform: scale(1.1)
     cursor: pointer
+
+  // Display a spinner on top of the image
+  &::after
+    $spinner-size: $spacing
+
+    content: ""
+
+    position: absolute
+    top: calc(50% - #{ $spinner-size / 2 })
+    left: calc(50% - #{ $spinner-size / 2 })
+    width: $spinner-size
+    height: $spinner-size
+
+    background-image: url(../images/icons/spinner.svg)
+    background-size: 100%
+
+    animation: spin 0.75s infinite cubic-bezier(.4,.26,.62,.79);
+    transition: opacity 0.25s ease-in-out
+
+    // Hide the spinner by default
+    opacity: 0
+
+  // When the button is disabled, hide the text and show the spinner.
+  &:disabled
+    color: transparentize($color--white, 1)
+
+    &::after
+      opacity: 1
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(#{ 360deg * 2 })
