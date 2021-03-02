@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: "https://nobullshitgit.com"
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
@@ -20,6 +23,11 @@ module.exports = {
         icon: "src/images/favicon.png"
       }
     },
-    "gatsby-plugin-sass"
+    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+      }
+    }
   ]
 };
