@@ -9,7 +9,7 @@ const FORM_URL = "https://landonschropp.us17.list-manage.com/subscribe/post" +
 export function SignUpForm() {
   let data = useSectionData("FreeIntroCourse");
 
-  return <div className="sign-up-form">
+  return <div className="sign-up-form box">
     <h3 className="sign-up-form__header">Sign Up</h3>
 
     <form className="sign-up-form__form" action={ FORM_URL } method="post" target="_blank">

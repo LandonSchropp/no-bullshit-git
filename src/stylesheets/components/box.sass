@@ -1,0 +1,20 @@
+.box
+  padding: $spacing
+  max-width: ($tablet-width + $mobile-width) / 2
+  margin: $spacing * 2 auto
+
+  text-align: center
+  text-shadow: none
+
+  background-color: $color--white
+  border-radius: $spacing / 4
+  box-shadow: 0 $spacing / 2 $spacing $spacing $color--shadow
+  color: $color--nero
+
+  // NOTE: This breaks the BEM conventions. This is a lazy approach. Don't do this.
+  h1, h2
+    margin-top: 0
+    margin-bottom: $spacing / 2
+
+  p
+    margin-top: $spacing / 2
