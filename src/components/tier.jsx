@@ -1,13 +1,15 @@
 import React from "react";
 import classNames from "classnames";
 
-import _ from "lodash";
+import { PaymentButton } from "./payment-button";
+
+const VARIANTS = {
+  "Ebook": "ebook",
+  "Ebook + Videos": "videos",
+  "Ebook + Videos + Coaching": "coaching"
+};
 
 export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
-
-  // For some reason, Gumroad won't accept an unencoded plus character in the URL variant.
-  // TODO: Remove the slash hack once Gumroad fixes the plus bug.
-  let gumroadVariant = encodeURI(_.last(header.split(" + ")));
 
   return <div className="tier">
     <h3 className="tier__header">{ header }</h3>
@@ -29,16 +31,8 @@ export function Tier({ tier: { header, price, discountedPrice, dimensions } }) {
       }
     </ul>
 
-    { /* TODO: Figure out how to place this somewhere better. */ }
     <div className="call-to-action tier__call-to-action">
-      <a
-        className="button"
-        href={ `https://gum.co/no-bullshit-git?variant=${ gumroadVariant }&wanted=true` }
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        Purchase
-      </a>
+      <PaymentButton variant={ VARIANTS[header] } />
     </div>
   </div>;
 }
