@@ -1,0 +1,12 @@
+@mixin full-screen
+
+  // Include extra padding for the main navigation
+  padding-top: $spacing * 3
+  padding-bottom: $spacing * 1
+
+  +tablet
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    min-height: calc(100vh - #{ $spacing * 2 })
