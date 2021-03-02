@@ -1,6 +1,8 @@
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useState } from "react";
 
+import { useSiteURL } from "../hooks/use-site-url";
+
 // The instructions for setting up the Stripe payment page were taken from this Gatsby tutorial:
 // https://www.gatsbyjs.com/tutorial/ecommerce-tutorial/.
 
@@ -17,6 +19,7 @@ const STRIPE_DEVELOPMENT_PRICES = {
 // The implementation for this component was taken from the Stripe documentation:
 // https://stripe.com/docs/stripe-js/elements/payment-request-button.
 export function PaymentButton({ variant }) {
+  const siteURL = useSiteURL();
   const [ loading, setLoading ] = useState(false);
 
   let price = STRIPE_DEVELOPMENT_PRICES[variant];
@@ -35,8 +38,8 @@ export function PaymentButton({ variant }) {
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
       lineItems: [ { price, quantity: 1 } ],
-      successUrl: "http://nobullshitgit.com/thank-you",
-      cancelUrl: "http://nobullshitgit.com/"
+      successUrl: `${ siteURL }/thank-you`,
+      cancelUrl: `${ siteURL }/`
     });
 
     if (error) {
