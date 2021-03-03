@@ -1,8 +1,8 @@
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import React from "react";
 
-import logo from "../images/logo.svg";
-
 import { useSectionData } from "../hooks/landing-page-data";
+import logo from "../images/logo.svg";
 
 export function Hero() {
   let data = useSectionData("Hero");
@@ -14,7 +14,18 @@ export function Hero() {
     </h1>
     <p className="subhead hero__subhead">{ data.subhead }</p>
     <div className="call-to-action">
-      <button type="button">Get the Course</button>
+      <AnchorLink
+        className="call-to-action__button button"
+        href="#pricing"
+      >
+        Get the Course
+      </AnchorLink>
+      <a
+        href="/free-intro-course"
+        className="call-to-action__button button"
+      >
+        <em>Free</em> Intro Course
+      </a>
     </div>
   </header>;
 }
