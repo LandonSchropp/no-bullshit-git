@@ -1,9 +1,5 @@
 .footer
-
-  // HACK: This allows the black theme to override the every-other styles in the section background
-  // color.
-  &.footer
-    +black-theme
+  +black-theme
 
   text-align: center
 
@@ -19,3 +15,7 @@
   +tablet
     display: flex
     gap: $spacing
+
+  &__all-rights
+    +less-than-tablet
+      display: none
