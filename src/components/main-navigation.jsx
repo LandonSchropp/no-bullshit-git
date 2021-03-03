@@ -66,7 +66,7 @@ function DesktopNavigationItems({ onClick }) {
       href="/free-intro-course"
       onClick={ onClick }
     >
-      Free Intro Course
+      <em>Free</em> Intro Course
     </a>
   </>;
 }
