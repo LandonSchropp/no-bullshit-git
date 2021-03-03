@@ -29,7 +29,6 @@
     "html-react-parser": "^1.2.4",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
-    "node-sass": "^5.0.0",
     "normalize.css": "^8.0.1",
     "nunjucks": "^3.2.3",
     "prop-types": "^15.7.2",
@@ -38,6 +37,7 @@
     "react-burger-menu": "^3.0.3",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "sass": "^1.32.8",
     "unzipper": "^0.10.11",
     "voca": "^1.4.0"
   },
