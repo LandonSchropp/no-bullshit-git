@@ -53,21 +53,21 @@ function DesktopNavigationItems({ onClick }) {
       Pricing
     </Anchor>
 
-    <a
+    <Anchor
       className="main-navigation__link"
+      href="/#author"
+      onClick={ onClick }
+    >
+      About the Author
+    </Anchor>
+
+    <a
+      className="main-navigation__button button"
       href="/free-intro-course"
       onClick={ onClick }
     >
       Free Intro Course
     </a>
-
-    <Anchor
-      className="main-navigation__button button"
-      href="/#pricing"
-      onClick={ onClick }
-    >
-      Get Your Copy
-    </Anchor>
   </>;
 }
 

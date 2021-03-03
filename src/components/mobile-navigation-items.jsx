@@ -11,42 +11,52 @@ const images = importHash(require.context("../images/navigation-icons", false, /
 // HACK: It's difficult to computationally determine this value. Instead, I'm hard-coding it.
 const NAVIGATIN_OFFSET = 48;
 
+function MobileNavigationItem({ header, anchor, onClick }) {
+  return <AnchorLink
+    key={ header }
+    offset={ NAVIGATIN_OFFSET }
+    className="mobile-navigation-items__link"
+    href={ `#${ anchor }` }
+    onClick={ onClick }
+  >
+    <img
+      className="mobile-navigation-items__icon"
+      src={ findImage(images, anchor) }
+      alt={ header }
+    />
+    { header }
+  </AnchorLink>;
+}
+
 /**
  * This styles the mobile navigation items. This component is a little strange because the
  * react-burger-menu library is responsible for supplying the parent component.
  */
 export function MobileNavigationItems({ onClick }) {
-  let sections = _.slice(LANDING_PAGE_SECTIONS, 1).map(({ header, anchor }) => {
-
-    return <AnchorLink
-      key={ header }
-      offset={ NAVIGATIN_OFFSET }
-      className="mobile-navigation-items__link"
-      href={ `#${ anchor }` }
-      onClick={ onClick }
-    >
-      <img
-        className="mobile-navigation-items__icon"
-        src={ findImage(images, anchor) }
-        alt={ header }
-      />
-      { header }
-    </AnchorLink>;
-  });
+  let sections = _
+    .slice(LANDING_PAGE_SECTIONS, 1)
+    .filter(({ header }) => !/intro course/i.test(header))
+    .map((section) => {
+      return <MobileNavigationItem
+        { ...section }
+        key={ section.header }
+        onClick={ onClick }
+      />;
+    });
 
   return [
     ...sections,
     <div
-      key="get-your-copy"
+      key="free-intro-course"
       className="mobile-navigation-items__call-to-action"
     >
-      <AnchorLink
+      <a
         className="button mobile-navigation-items__button"
-        href="#pricing"
+        href="/free-intro-course"
         onClick={ onClick }
       >
-        Get Your Copy
-      </AnchorLink>
+        Free Intro Course
+      </a>
     </div>,
     <p key="questions" className="mobile-navigation-items__questions">
       Questions? Reach out to <a href="mailto:schroppl@gmail.com">schroppl@gmail.com</a>.
