@@ -45,20 +45,20 @@ function DesktopNavigationItems({ onClick }) {
     </Anchor>
 
     <Anchor
+      className="main-navigation__link"
+      href="/#author"
+      onClick={ onClick }
+    >
+      About the Author
+    </Anchor>
+
+    <Anchor
       offset={ NAVIGATIN_OFFSET }
       className="main-navigation__link"
       href="/#pricing"
       onClick={ onClick }
     >
       Pricing
-    </Anchor>
-
-    <Anchor
-      className="main-navigation__link"
-      href="/#author"
-      onClick={ onClick }
-    >
-      About the Author
     </Anchor>
 
     <a
