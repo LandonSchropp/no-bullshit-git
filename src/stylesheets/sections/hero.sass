@@ -1,6 +1,7 @@
 .hero
   @include brown-theme
 
+  $curve-height: $spacing * 2.5
   $mobile-curve-width: 100%
   $tablet-curve-width: 75%
   $desktop-curve-width: 50%
@@ -9,12 +10,15 @@
   background: none
   position: relative
 
-  padding-top: $spacing * 6.5
+  padding-top: $spacing * 4 + $curve-height
   padding-bottom: $spacing * 4
 
-  // Include extra padding for the main navigation
   +tablet
-    padding-top: $spacing * 10.5
+    padding-top: $spacing * 6 + $curve-height
+    padding-bottom: $spacing * 6
+
+  +desktop
+    padding-top: $spacing * 8 + $curve-height
     padding-bottom: $spacing * 8
 
   *
