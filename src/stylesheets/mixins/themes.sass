@@ -16,3 +16,11 @@
 
 @mixin gray-theme
   background-color: $color--wild-sand
+
+@mixin black-theme
+  background-color: $color--black
+  color: transparentize($color--white, 0.25)
+
+  &__anchor
+    &, &:visited, &:focus, &:hover
+      color: inherit

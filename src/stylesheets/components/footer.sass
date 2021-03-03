@@ -1,6 +1,10 @@
 .footer
-  background-color: $color--black
-  color: transparentize($color--white, 0.25)
+
+  // HACK: This allows the black theme to override the every-other styles in the section background
+  // color.
+  &.footer
+    +black-theme
+
   text-align: center
 
   padding-top: $spacing / 2
@@ -15,7 +19,3 @@
   +tablet
     display: flex
     gap: $spacing
-
-  &__anchor
-    &, &:visited, &:focus, &:hover
-      color: inherit
