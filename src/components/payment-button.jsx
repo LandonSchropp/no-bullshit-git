@@ -10,11 +10,25 @@ import { useSiteURL } from "../hooks/use-site-url";
 const STRIPE_PUBLIC_DEVELOPMENT_API_KEY = "pk_test_TojAFq8RQ5Qy2NED5gL0l4ZF";
 const STRIPE_PUBLIC_PRODUCTION_API_KEY = "pk_live_UBXglUivGyJQ3Bx3UKoPMYtl";
 
+const PUBLIC_API_KEY = process.env.NODE_ENV === "production"
+  ? STRIPE_PUBLIC_PRODUCTION_API_KEY
+  : STRIPE_PUBLIC_DEVELOPMENT_API_KEY;
+
 const STRIPE_DEVELOPMENT_PRICES = {
   "ebook": "price_0IQIrUnsdoiHSNfcUiKWI6i3",
   "videos": "price_0IQIrUnsdoiHSNfcz0rlYJRY",
   "coaching": "price_0IQIrUnsdoiHSNfc0ucEzbKA"
 };
+
+const STRIPE_PRODUCTION_PRICES = {
+  "ebook": "price_0IQHIansdoiHSNfcaLetW71X",
+  "videos": "price_0IQHIansdoiHSNfcqErsdypv",
+  "coaching": "price_0IQHIansdoiHSNfcQH1dkqit"
+};
+
+const STRIPE_PRICES = process.env.NODE_ENV === "production"
+  ? STRIPE_PRODUCTION_PRICES
+  : STRIPE_DEVELOPMENT_PRICES;
 
 // The implementation for this component was taken from the Stripe documentation:
 // https://stripe.com/docs/stripe-js/elements/payment-request-button.
@@ -22,18 +36,14 @@ export function PaymentButton({ variant }) {
   const siteURL = useSiteURL();
   const [ loading, setLoading ] = useState(false);
 
-  let price = STRIPE_DEVELOPMENT_PRICES[variant];
+  let price = STRIPE_PRICES[variant];
 
   const redirectToCheckout = async event => {
     event.preventDefault();
 
     setLoading(true);
 
-    const publicAPIKey = process.env.NODE_ENV === "production"
-      ? STRIPE_PUBLIC_PRODUCTION_API_KEY
-      : STRIPE_PUBLIC_DEVELOPMENT_API_KEY;
-
-    const stripe = await loadStripe(publicAPIKey);
+    const stripe = await loadStripe(PUBLIC_API_KEY);
 
     const { error } = await stripe.redirectToCheckout({
       mode: "payment",
