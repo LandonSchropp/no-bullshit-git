@@ -1,16 +1,21 @@
 .hero
   @include brown-theme
 
-  $curve-width: 50%
-  $gradient-offset: $curve-width / ($curve-width * 2 + 100%) * 100%
+  $mobile-curve-width: 100%
+  $tablet-curve-width: 75%
+  $desktop-curve-width: 50%
 
   overflow-x: hidden
   background: none
   position: relative
-  padding-bottom: $spacing * 8
+
+  padding-top: $spacing * 6.5
+  padding-bottom: $spacing * 4
 
   // Include extra padding for the main navigation
-  padding-top: $spacing * 10.5
+  +tablet
+    padding-top: $spacing * 10.5
+    padding-bottom: $spacing * 8
 
   *
     position: relative
@@ -29,16 +34,30 @@
 
   // Use a pseudoelement to create a curved background
   &::before
+
+    @mixin curved-bottom($curve-width)
+      $gradient-offset: $curve-width / ($curve-width * 2 + 100%) * 100%
+
+      left: -$curve-width
+      right: -$curve-width
+
+      background: url(../images/background-tile.svg), linear-gradient(110deg, $color--nero $gradient-offset, $color--bean 100% - $gradient-offset)
+
     @include brown-background-tiles
 
     content: ""
     display: block
     position: absolute
     top: 0
-    left: -$curve-width
-    right: -$curve-width
     bottom: 0
 
-    background: url(../images/background-tile.svg), linear-gradient(110deg, $color--nero $gradient-offset, $color--bean 100% - $gradient-offset)
     border-bottom-left-radius: 100%
     border-bottom-right-radius: 100%
+
+    +curved-bottom($mobile-curve-width)
+
+    +tablet
+      +curved-bottom($tablet-curve-width)
+
+    +desktop
+      +curved-bottom($desktop-curve-width)
