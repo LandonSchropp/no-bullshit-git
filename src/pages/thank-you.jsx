@@ -16,7 +16,7 @@ export default function ThankYou() {
         <Box>
           <h1 className="page-not-found__header">Thank You!</h1>
           <p>
-            Thank you for preordering No Bullshit Git! Your purchase will be delivered on May 3. If
+            Thank you for preordering No Bullshit Git! Your purchase will be delivered on May 31. If
             you have any questions in the meantime, please don’t hesitate to reach out at
             { " " }
             <a href="mailto:schroppl@gmail.com">schroppl@gmail.com</a>.

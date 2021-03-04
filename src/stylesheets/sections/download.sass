@@ -1,0 +1,51 @@
+.download
+
+  // NOTE: In order to avoid positional repeats, the $number-of-leaves and the
+  // $positioning-group-size must not share any common divisors. Using two prime numbers makes this
+  // easy.
+  $leaf-size: $spacing * 1.25
+  $number-of-leaves: 23
+  $positioning-group-size: 5
+  $animation-duration: 5s
+
+  @mixin leaf-animation
+    animation: falling-leaf $animation-duration infinite linear
+
+    @for $i from 1 through $number-of-leaves
+      &:nth-of-type(#{ $i })
+        $positional-index: $i * $positioning-group-size % $number-of-leaves
+        left: calc(#{ ($positional-index + 0.5) / $number-of-leaves * 100% } - #{ $leaf-size / 2 })
+        animation-delay: ($i - 1) / $number-of-leaves * $animation-duration
+
+  position: relative
+  overflow: hidden
+
+  &__leaf
+    display: block
+    width: $leaf-size
+    height: $leaf-size
+    background-image: url('../images/icons/poop.svg')
+    background-size: 100%
+
+    position: absolute
+    top: -$leaf-size
+
+    pointer-events: none
+
+    +leaf-animation
+
+  // Display everything that's not a leaf as relative so they shows over the leaves.
+  & > *:not(&__leaf)
+    position: relative
+
+@keyframes falling-leaf
+  0%
+    transform: translateY(0) rotate(0deg)
+    opacity: 0.075
+
+  50%
+    opacity: 0.075
+
+  100%
+    transform: translateY(1500%) rotate(360deg)
+    opacity: 0
