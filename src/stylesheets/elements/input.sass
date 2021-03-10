@@ -1,6 +1,12 @@
 input[type="email"]
   @extend button
 
+  // Override this setting applied by the button styles.
+  user-select: text
+
+  // BUG FIX: Display the border in iOS Safari
+  appearance: none
+
   display: block
   margin: $spacing / 2 auto
   min-width: $mobile-width
