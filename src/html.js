@@ -29,6 +29,12 @@ export default function HTML(props) {
         <div key="body" id="___gatsby" dangerouslySetInnerHTML={ { __html: props.body } } />
 
         { props.postBodyComponents }
+
+        { /*
+        TODO: Use the NPM package when it's released.
+        https://github.com/wistia/fresh-url/issues/22
+        */ }
+        <script src="//fast.wistia.net/labs/fresh-url/v1.js" async />
       </body>
     </html>
   );
